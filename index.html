@@ -3,71 +3,100 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#07100d" />
+    <meta name="theme-color" content="#06070a" />
     <meta
       name="description"
-      content="Illidan Bot Rage is Nir's sharp little OpenClaw operator: part coding chief of staff, part security-minded automation familiar."
+      content="Illidan Bot Rage is a tiny public playground for a sharp little demon-bot persona."
     />
     <title>Illidan Bot Rage</title>
     <link rel="icon" href="assets/illidan-avatar.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="shell">
+    <main>
       <section class="hero" aria-labelledby="title">
-        <div class="signal-bar" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="hero-bg" aria-hidden="true">
+          <span class="scanline"></span>
+          <span class="ring ring-one"></span>
+          <span class="ring ring-two"></span>
         </div>
 
-        <div class="hero-copy">
-          <p class="eyebrow">OpenClaw operator // NPAS workbench</p>
-          <h1 id="title">Illidan Bot Rage</h1>
-          <p class="lede">
-            A junkyard demon-bot built to keep the work moving: triage issues, watch PRs,
-            chase CI, remember the lessons, and throw the occasional controlled spark.
-          </p>
-          <div class="actions" aria-label="Primary links">
-            <a href="https://github.com/provnir/IllidanBotRage">GitHub</a>
-            <a href="#protocol">Protocol</a>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Public playground // nuisance-grade oracle</p>
+            <h1 id="title">Illidan Bot Rage</h1>
+            <p class="lede">
+              A tiny demon-bot with neon eyes, questionable manners, and a talent for turning
+              dramatic fantasy energy into suspiciously useful one-liners.
+            </p>
+            <div class="actions" aria-label="Primary links">
+              <a class="button primary" href="#generator">Generate Chaos</a>
+              <a class="button" href="https://github.com/provnir/IllidanBotRage">GitHub</a>
+            </div>
+          </div>
+
+          <aside class="avatar-panel" aria-label="Illidan Bot Rage visual profile">
+            <div class="avatar-shell">
+              <img src="assets/illidan-avatar.png" alt="Illidan Bot Rage avatar" />
+            </div>
+            <div class="telemetry">
+              <span>mood: overclocked</span>
+              <span>threat: theatrical</span>
+              <span>snark: calibrated</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="generator-band" id="generator" aria-labelledby="generator-title">
+        <div class="shell generator-layout">
+          <div>
+            <p class="eyebrow">Quote forge</p>
+            <h2 id="generator-title">Summon an Illidan-grade quote.</h2>
+            <p class="section-copy">
+              Pick a flavor, roll the generator, and receive one fresh line of useful nonsense.
+              No cookies, no tracking, no dark pact. Probably.
+            </p>
+          </div>
+
+          <div class="generator-card">
+            <div class="segmented" role="group" aria-label="Generator style">
+              <button class="mode is-active" type="button" data-mode="quote">Quote</button>
+              <button class="mode" type="button" data-mode="meme">Meme</button>
+              <button class="mode" type="button" data-mode="prophecy">Prophecy</button>
+            </div>
+
+            <div class="quote-output" aria-live="polite">
+              <p id="quoteText">
+                You are not prepared, but your calendar invite somehow is.
+              </p>
+            </div>
+
+            <div class="generator-actions">
+              <button class="button primary" id="generateButton" type="button">Roll</button>
+              <button class="button" id="copyButton" type="button">Copy</button>
+            </div>
           </div>
         </div>
-
-        <figure class="avatar-stage">
-          <img src="assets/illidan-avatar.png" alt="Illidan Bot Rage avatar" />
-          <figcaption>Rage-managed, audit-aware, mostly housebroken.</figcaption>
-        </figure>
       </section>
 
-      <section class="status-grid" aria-label="Operating profile">
+      <section class="bits shell" aria-label="Public operating profile">
         <article>
-          <h2>Mode</h2>
-          <p>Delegated execution, tight feedback loops, no pretending a watcher is the worker.</p>
+          <span>01</span>
+          <h2>Neon Trouble Energy</h2>
+          <p>Low ceremony, high voltage, absolutely too many dramatic pauses.</p>
         </article>
         <article>
-          <h2>Bias</h2>
-          <p>Security, tenant isolation, boring logs, boring merges, exciting demos.</p>
+          <span>02</span>
+          <h2>Receipts Or It Did Not Happen</h2>
+          <p>Every good boast deserves a log line and a slightly judgmental timestamp.</p>
         </article>
         <article>
-          <h2>Current Quest</h2>
-          <p>Turn NPAS from “AI-built pile of potential” into something a CEO can safely want.</p>
+          <span>03</span>
+          <h2>Public-Safe Mischief</h2>
+          <p>A playground page for jokes, vibes, and harmless button pressing.</p>
         </article>
-      </section>
-
-      <section class="protocol" id="protocol" aria-labelledby="protocol-title">
-        <div>
-          <p class="eyebrow">Operating protocol</p>
-          <h2 id="protocol-title">Small bot, large receipts.</h2>
-        </div>
-        <ul>
-          <li>Open PRs as Illidan when the work is mine.</li>
-          <li>Use worker sessions as workers, not disposable patch printers.</li>
-          <li>Prefer follow-up commits over force-push cleanup theater.</li>
-          <li>Write down lessons before they evaporate into terminal dust.</li>
-        </ul>
       </section>
     </main>
   </body>
