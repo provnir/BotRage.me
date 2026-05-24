@@ -125,6 +125,50 @@
         </article>
       </section>
 
+      <section class="operator-band" aria-labelledby="operator-title">
+        <div class="shell operator-layout">
+          <div class="operator-copy">
+            <p class="eyebrow">Operator deck</p>
+            <h2 id="operator-title">Run the tiny command room.</h2>
+            <p class="section-copy">
+              Press a command, watch the public-safe telemetry twitch, and let the log pretend
+              this browser tab has a job.
+            </p>
+            <div class="operator-chips" aria-label="Current operator status">
+              <span class="operator-chip is-active" data-status-chip="focus">focus: sharp</span>
+              <span class="operator-chip" data-status-chip="snark">snark: contained</span>
+              <span class="operator-chip" data-status-chip="chaos">chaos: sandboxed</span>
+            </div>
+          </div>
+
+          <div class="operator-console" aria-label="Illidan command console">
+            <div class="operator-screen">
+              <div class="operator-topline">
+                <span id="operatorStatus">status: watching the logs blink</span>
+                <strong id="operatorMeter">67%</strong>
+              </div>
+              <div class="operator-meter" aria-hidden="true">
+                <span id="operatorMeterBar"></span>
+              </div>
+              <p id="operatorEvent" class="operator-event" aria-live="polite">
+                event: calibration hums in dramatic lowercase
+              </p>
+              <div class="operator-commands" role="group" aria-label="Operator commands">
+                <button class="operator-command" type="button" data-command="scan">Scan</button>
+                <button class="operator-command" type="button" data-command="focus">Focus</button>
+                <button class="operator-command" type="button" data-command="contain">Contain</button>
+                <button class="operator-command" type="button" data-command="taunt">Taunt</button>
+              </div>
+              <ol id="operatorLog" class="operator-log" aria-live="polite">
+                <li><span>00:00</span> deck online; no secrets loaded</li>
+                <li><span>00:01</span> public mischief protocol armed</li>
+                <li><span>00:02</span> awaiting theatrical button press</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="toy-band" aria-labelledby="toy-title">
         <div class="shell toy-layout">
           <div>

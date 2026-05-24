@@ -48,10 +48,19 @@ const questText = document.querySelector("#questText");
 const questReward = document.querySelector("#questReward");
 const soundButtons = [...document.querySelectorAll(".sound-button")];
 const soundOutput = document.querySelector("#soundOutput");
+const operatorStatus = document.querySelector("#operatorStatus");
+const operatorMeter = document.querySelector("#operatorMeter");
+const operatorMeterBar = document.querySelector("#operatorMeterBar");
+const operatorEvent = document.querySelector("#operatorEvent");
+const operatorLog = document.querySelector("#operatorLog");
+const operatorCommands = [...document.querySelectorAll(".operator-command")];
+const operatorChips = [...document.querySelectorAll(".operator-chip")];
 
 let currentMode = "quote";
 let lastIndex = -1;
 let questIndex = -1;
+let operatorStatusIndex = 0;
+let operatorMeterValue = 67;
 
 const rageLevels = [
   { max: 18, text: "Dormant. The mask is mostly decorative. Suspiciously responsible." },
@@ -80,6 +89,51 @@ const quests = [
   { rank: "Rank D", text: "Rename one file without awakening the ancient import path.", reward: "Reward: tiny victory biscuit" },
   { rank: "Rank A", text: "Stare at the error until it becomes embarrassed.", reward: "Reward: dramatic competence" },
 ];
+
+const operatorStatuses = [
+  {
+    key: "focus",
+    label: "status: watching the logs blink",
+    event: "event: calibration hums in dramatic lowercase",
+  },
+  {
+    key: "snark",
+    label: "status: polishing one-liners",
+    event: "event: sarcasm buffer stable; no bystanders singed",
+  },
+  {
+    key: "chaos",
+    label: "status: chaos sandbox locked",
+    event: "event: tiny alarms rehearsing for opening night",
+  },
+];
+
+const operatorCommandMap = {
+  scan: {
+    meter: 5,
+    status: "focus",
+    event: "scan complete: three dramatic shadows, zero private data",
+    log: "scan sweep finished; vibes classified as neon",
+  },
+  focus: {
+    meter: 9,
+    status: "focus",
+    event: "focus lens aligned: useful menace increased",
+    log: "focus matrix tightened around the next tiny task",
+  },
+  contain: {
+    meter: -12,
+    status: "chaos",
+    event: "containment pulse fired: spectacle remains browser-sized",
+    log: "containment field refreshed; chaos politely sat down",
+  },
+  taunt: {
+    meter: 14,
+    status: "snark",
+    event: "taunt broadcast: villain monologue trimmed for runtime",
+    log: "taunt packet delivered; confidence looked offended",
+  },
+};
 
 function pickLine() {
   const lines = banks[currentMode];
@@ -245,6 +299,54 @@ function yell(text) {
   window.requestAnimationFrame(() => soundOutput.classList.add("is-yelling"));
 }
 
+function operatorTimestamp() {
+  const now = new Date();
+  return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+function setOperatorMeter(value) {
+  operatorMeterValue = Math.max(12, Math.min(99, value));
+  operatorMeter.textContent = `${operatorMeterValue}%`;
+  operatorMeterBar.style.width = `${operatorMeterValue}%`;
+}
+
+function setOperatorStatus(key) {
+  const index = operatorStatuses.findIndex((item) => item.key === key);
+  const nextIndex = index >= 0 ? index : operatorStatusIndex;
+  operatorStatusIndex = nextIndex;
+  const status = operatorStatuses[nextIndex];
+  operatorStatus.textContent = status.label;
+  operatorEvent.textContent = status.event;
+  for (const chip of operatorChips) {
+    chip.classList.toggle("is-active", chip.dataset.statusChip === status.key);
+  }
+}
+
+function appendOperatorLog(text) {
+  const item = document.createElement("li");
+  const time = document.createElement("span");
+  time.textContent = operatorTimestamp();
+  item.append(time, document.createTextNode(text));
+  operatorLog.prepend(item);
+  while (operatorLog.children.length > 7) {
+    operatorLog.lastElementChild.remove();
+  }
+}
+
+function runOperatorCommand(command) {
+  const action = operatorCommandMap[command];
+  if (!action) return;
+  setOperatorMeter(operatorMeterValue + action.meter);
+  setOperatorStatus(action.status);
+  operatorEvent.textContent = `event: ${action.event}`;
+  appendOperatorLog(action.log);
+}
+
+function rotateOperatorStatus() {
+  operatorStatusIndex = (operatorStatusIndex + 1) % operatorStatuses.length;
+  setOperatorStatus(operatorStatuses[operatorStatusIndex].key);
+}
+
 for (const button of themeButtons) {
   button.addEventListener("click", () => setTheme(button.dataset.theme));
 }
@@ -255,5 +357,13 @@ for (const button of soundButtons) {
   button.addEventListener("click", () => yell(button.dataset.yell));
 }
 
+for (const button of operatorCommands) {
+  button.addEventListener("click", () => runOperatorCommand(button.dataset.command));
+}
+
+setInterval(rotateOperatorStatus, 5200);
+
 setTheme("fel");
+setOperatorMeter(operatorMeterValue);
+setOperatorStatus("focus");
 renderMemeCard();
