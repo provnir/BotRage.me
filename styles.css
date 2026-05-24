@@ -260,6 +260,7 @@ h1 {
 }
 
 .generator-band,
+.meme-band,
 .toy-band {
   padding: 86px 0;
   border-bottom: 1px solid var(--line);
@@ -275,6 +276,13 @@ h1 {
     rgba(255, 255, 255, 0.012);
 }
 
+.meme-band {
+  background:
+    linear-gradient(100deg, rgba(109, 255, 150, 0.08), transparent 44%),
+    linear-gradient(250deg, rgba(168, 121, 255, 0.09), transparent 44%),
+    rgba(255, 255, 255, 0.012);
+}
+
 .quest-band {
   padding: 86px 0;
   border-bottom: 1px solid var(--line);
@@ -284,6 +292,7 @@ h1 {
 }
 
 .generator-layout,
+.meme-layout,
 .toy-layout,
 .quest-layout {
   display: grid;
@@ -293,6 +302,7 @@ h1 {
 }
 
 .generator-layout h2,
+.meme-layout h2,
 .toy-layout h2,
 .quest-layout h2 {
   max-width: 680px;
@@ -311,6 +321,7 @@ h1 {
 }
 
 .generator-card,
+.meme-preview,
 .rage-console,
 .quest-board,
 .soundboard,
@@ -324,6 +335,18 @@ h1 {
 
 .generator-card {
   padding: clamp(18px, 4vw, 28px);
+}
+
+.meme-preview {
+  padding: clamp(12px, 3vw, 20px);
+}
+
+.meme-preview canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  background: #070b0f;
 }
 
 .quest-board,
@@ -624,6 +647,7 @@ h1 {
 
   .hero-grid,
   .generator-layout,
+  .meme-layout,
   .toy-layout,
   .quest-layout,
   .bits {
@@ -648,6 +672,7 @@ h1 {
   }
 
   .generator-band,
+  .meme-band,
   .toy-band,
   .quest-band {
     padding: 58px 0;

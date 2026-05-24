@@ -81,7 +81,28 @@
             <div class="generator-actions">
               <button class="button primary" id="generateButton" type="button">Roll</button>
               <button class="button" id="copyButton" type="button">Copy</button>
+              <button class="button" id="memeButton" type="button">Make Card</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="meme-band" aria-labelledby="meme-title">
+        <div class="shell meme-layout">
+          <div>
+            <p class="eyebrow">Meme forge</p>
+            <h2 id="meme-title">Turn the line into a card.</h2>
+            <p class="section-copy">
+              The current quote becomes a local canvas image. Nothing uploads. The browser does
+              the tiny poster ritual by itself.
+            </p>
+            <div class="generator-actions">
+              <button class="button primary" id="downloadMemeButton" type="button">Download</button>
+              <button class="button" id="rerenderMemeButton" type="button">Refresh Card</button>
+            </div>
+          </div>
+          <div class="meme-preview">
+            <canvas id="memeCanvas" width="1200" height="675" aria-label="Generated meme card"></canvas>
           </div>
         </div>
       </section>

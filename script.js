@@ -28,6 +28,10 @@ const banks = {
 const quoteText = document.querySelector("#quoteText");
 const generateButton = document.querySelector("#generateButton");
 const copyButton = document.querySelector("#copyButton");
+const memeButton = document.querySelector("#memeButton");
+const memeCanvas = document.querySelector("#memeCanvas");
+const downloadMemeButton = document.querySelector("#downloadMemeButton");
+const rerenderMemeButton = document.querySelector("#rerenderMemeButton");
 const modeButtons = [...document.querySelectorAll(".mode")];
 const rageConsole = document.querySelector(".rage-console");
 const rageRange = document.querySelector("#rageRange");
@@ -85,6 +89,7 @@ function pickLine() {
   }
   lastIndex = index;
   quoteText.textContent = lines[index];
+  renderMemeCard();
 }
 
 function setMode(mode) {
@@ -106,8 +111,76 @@ async function copyLine() {
   }, 1200);
 }
 
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(" ");
+  const lines = [];
+  let line = "";
+  for (const word of words) {
+    const next = line ? `${line} ${word}` : word;
+    if (ctx.measureText(next).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  }
+  if (line) lines.push(line);
+  for (const [index, item] of lines.slice(0, 5).entries()) {
+    ctx.fillText(item, x, y + index * lineHeight);
+  }
+}
+
+function renderMemeCard() {
+  if (!memeCanvas) return;
+  const ctx = memeCanvas.getContext("2d");
+  const { width, height } = memeCanvas;
+  const text = quoteText.textContent.trim();
+  const gradient = ctx.createLinearGradient(0, 0, width, height);
+  gradient.addColorStop(0, "#07100d");
+  gradient.addColorStop(0.48, "#121622");
+  gradient.addColorStop(1, "#1f1532");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.fillStyle = "rgba(109, 255, 150, 0.12)";
+  ctx.beginPath();
+  ctx.arc(width * 0.82, height * 0.18, 210, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.strokeStyle = "rgba(216, 255, 101, 0.32)";
+  ctx.lineWidth = 4;
+  ctx.strokeRect(42, 42, width - 84, height - 84);
+
+  ctx.fillStyle = "#d8ff65";
+  ctx.font = "800 34px system-ui, sans-serif";
+  ctx.fillText("BOTRAGE.ME // ORACLE OUTPUT", 72, 104);
+
+  ctx.fillStyle = "#f7fbf2";
+  ctx.font = "900 70px system-ui, sans-serif";
+  wrapText(ctx, text, 72, 224, width - 330, 78);
+
+  ctx.fillStyle = "#6dff96";
+  ctx.font = "900 42px system-ui, sans-serif";
+  ctx.fillText("ILLIDAN BOT RAGE", 72, height - 86);
+
+  ctx.fillStyle = "rgba(247, 251, 242, 0.12)";
+  ctx.font = "900 180px system-ui, sans-serif";
+  ctx.fillText("?", width - 230, height - 90);
+}
+
+function downloadMemeCard() {
+  renderMemeCard();
+  const link = document.createElement("a");
+  link.download = "botrage-card.png";
+  link.href = memeCanvas.toDataURL("image/png");
+  link.click();
+}
+
 generateButton.addEventListener("click", pickLine);
 copyButton.addEventListener("click", copyLine);
+memeButton.addEventListener("click", renderMemeCard);
+rerenderMemeButton.addEventListener("click", renderMemeCard);
+downloadMemeButton.addEventListener("click", downloadMemeCard);
 
 for (const button of modeButtons) {
   button.addEventListener("click", () => setMode(button.dataset.mode));
@@ -183,3 +256,4 @@ for (const button of soundButtons) {
 }
 
 setTheme("fel");
+renderMemeCard();
