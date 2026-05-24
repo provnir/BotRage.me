@@ -98,6 +98,49 @@
           <p>A playground page for jokes, vibes, and harmless button pressing.</p>
         </article>
       </section>
+
+      <section class="toy-band" aria-labelledby="toy-title">
+        <div class="shell toy-layout">
+          <div>
+            <p class="eyebrow">Interactive nonsense</p>
+            <h2 id="toy-title">Consult the rage engine.</h2>
+            <p class="section-copy">
+              Tune the drama level, ask a question, and receive an answer with the exact
+              authority of a glowing mask in a browser tab.
+            </p>
+          </div>
+
+          <div class="rage-console" data-rage="42">
+            <label class="rage-label" for="rageRange">
+              <span>Rage Meter</span>
+              <strong id="rageValue">42%</strong>
+            </label>
+            <input id="rageRange" type="range" min="0" max="100" value="42" />
+            <p id="rageDiagnosis" class="rage-diagnosis">
+              Drama contained. Sparks decorative. Snacks still recoverable.
+            </p>
+
+            <div class="oracle">
+              <label for="oracleQuestion">Ask the oracle</label>
+              <div class="oracle-input">
+                <input
+                  id="oracleQuestion"
+                  type="text"
+                  maxlength="120"
+                  placeholder="Should I press the suspicious button?"
+                />
+                <button class="button primary" id="oracleButton" type="button">Ask</button>
+              </div>
+              <div class="oracle-answer" aria-live="polite">
+                <span id="oracleConfidence">confidence: 73%</span>
+                <p id="oracleAnswer">
+                  The mask says yes, but the tiny warning light says document it first.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

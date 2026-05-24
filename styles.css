@@ -234,7 +234,8 @@ h1 {
   background: rgba(7, 11, 15, 0.76);
 }
 
-.generator-band {
+.generator-band,
+.toy-band {
   padding: 86px 0;
   border-bottom: 1px solid var(--line);
   background:
@@ -242,14 +243,22 @@ h1 {
     rgba(255, 255, 255, 0.018);
 }
 
-.generator-layout {
+.toy-band {
+  background:
+    linear-gradient(110deg, rgba(168, 121, 255, 0.12), transparent 44%),
+    rgba(255, 255, 255, 0.012);
+}
+
+.generator-layout,
+.toy-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
   gap: clamp(24px, 5vw, 72px);
   align-items: start;
 }
 
-.generator-layout h2 {
+.generator-layout h2,
+.toy-layout h2 {
   max-width: 680px;
   margin: 0;
   font-size: clamp(2.15rem, 5vw, 5.4rem);
@@ -266,6 +275,7 @@ h1 {
 }
 
 .generator-card,
+.rage-console,
 .bits article {
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -276,6 +286,111 @@ h1 {
 
 .generator-card {
   padding: clamp(18px, 4vw, 28px);
+}
+
+.rage-console {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(18px, 4vw, 30px);
+}
+
+.rage-console::before {
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle, rgba(109, 255, 150, calc(0.04 + var(--rage-alpha, 0.14))) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(255, 178, 79, calc(0.03 + var(--rage-alpha, 0.12))) 0%, transparent 34%);
+  filter: blur(10px);
+  opacity: 0.9;
+  transform: rotate(10deg);
+}
+
+.rage-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--acid);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rage-label strong {
+  color: var(--ink);
+  font-size: 1.35rem;
+}
+
+#rageRange {
+  width: 100%;
+  margin: 22px 0 10px;
+  accent-color: var(--green);
+}
+
+.rage-diagnosis {
+  min-height: 58px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.oracle {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.oracle label {
+  color: var(--acid);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.oracle-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.oracle-input input {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(5, 8, 11, 0.82);
+  outline: none;
+}
+
+.oracle-input input:focus {
+  border-color: rgba(109, 255, 150, 0.72);
+}
+
+.oracle-answer {
+  min-height: 148px;
+  padding: 18px;
+  border: 1px solid rgba(168, 121, 255, 0.28);
+  border-radius: 12px;
+  background: rgba(5, 8, 11, 0.6);
+}
+
+.oracle-answer span {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.oracle-answer p {
+  margin: 14px 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.08;
 }
 
 .segmented {
@@ -381,6 +496,7 @@ h1 {
 
   .hero-grid,
   .generator-layout,
+  .toy-layout,
   .bits {
     grid-template-columns: 1fr;
   }
@@ -402,11 +518,13 @@ h1 {
     order: -1;
   }
 
-  .generator-band {
+  .generator-band,
+  .toy-band {
     padding: 58px 0;
   }
 
-  .segmented {
+  .segmented,
+  .oracle-input {
     grid-template-columns: 1fr;
   }
 
