@@ -37,9 +37,17 @@ const oracleQuestion = document.querySelector("#oracleQuestion");
 const oracleButton = document.querySelector("#oracleButton");
 const oracleConfidence = document.querySelector("#oracleConfidence");
 const oracleAnswer = document.querySelector("#oracleAnswer");
+const themeButtons = [...document.querySelectorAll(".theme-button")];
+const questButton = document.querySelector("#questButton");
+const questRank = document.querySelector("#questRank");
+const questText = document.querySelector("#questText");
+const questReward = document.querySelector("#questReward");
+const soundButtons = [...document.querySelectorAll(".sound-button")];
+const soundOutput = document.querySelector("#soundOutput");
 
 let currentMode = "quote";
 let lastIndex = -1;
+let questIndex = -1;
 
 const rageLevels = [
   { max: 18, text: "Dormant. The mask is mostly decorative. Suspiciously responsible." },
@@ -58,6 +66,15 @@ const oracleAnswers = [
   "Probably. But if it explodes, call it a controlled illumination event.",
   "Absolutely not, unless the goal is educational regret.",
   "The answer is hidden in the logs, where all tiny tragedies go to become text.",
+];
+
+const quests = [
+  { rank: "Rank C", text: "Defeat three stale tabs before they multiply.", reward: "Reward: one smug refresh" },
+  { rank: "Rank A", text: "Escort the suspicious checkbox across the settings page.", reward: "Reward: ceremonial undo button" },
+  { rank: "Rank B", text: "Recover the missing semicolon from the neon swamp.", reward: "Reward: lint-free cloak" },
+  { rank: "Rank S", text: "Convince the cache shrine to release yesterday's truth.", reward: "Reward: forbidden hard reload" },
+  { rank: "Rank D", text: "Rename one file without awakening the ancient import path.", reward: "Reward: tiny victory biscuit" },
+  { rank: "Rank A", text: "Stare at the error until it becomes embarrassed.", reward: "Reward: dramatic competence" },
 ];
 
 function pickLine() {
@@ -129,3 +146,40 @@ oracleQuestion.addEventListener("keydown", (event) => {
 });
 
 updateRage(rageRange.value);
+
+function setTheme(theme) {
+  document.body.dataset.theme = theme;
+  for (const button of themeButtons) {
+    button.classList.toggle("is-active", button.dataset.theme === theme);
+  }
+}
+
+function newQuest() {
+  let index = Math.floor(Math.random() * quests.length);
+  if (quests.length > 1 && index === questIndex) {
+    index = (index + 1) % quests.length;
+  }
+  questIndex = index;
+  const quest = quests[index];
+  questRank.textContent = quest.rank;
+  questText.textContent = quest.text;
+  questReward.textContent = quest.reward;
+}
+
+function yell(text) {
+  soundOutput.textContent = text;
+  soundOutput.classList.remove("is-yelling");
+  window.requestAnimationFrame(() => soundOutput.classList.add("is-yelling"));
+}
+
+for (const button of themeButtons) {
+  button.addEventListener("click", () => setTheme(button.dataset.theme));
+}
+
+questButton.addEventListener("click", newQuest);
+
+for (const button of soundButtons) {
+  button.addEventListener("click", () => yell(button.dataset.yell));
+}
+
+setTheme("fel");

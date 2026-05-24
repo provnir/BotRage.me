@@ -16,6 +16,22 @@
     sans-serif;
 }
 
+body[data-theme="arcane"] {
+  --green: #9f8cff;
+  --acid: #72e7ff;
+  --violet: #ff8bd7;
+  --cyan: #a879ff;
+  --ember: #f8d66d;
+}
+
+body[data-theme="junkyard"] {
+  --green: #ffb24f;
+  --acid: #6dff96;
+  --violet: #65d8ff;
+  --cyan: #d8ff65;
+  --ember: #ff6d6d;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -152,14 +168,20 @@ h1 {
 }
 
 .actions,
-.generator-actions {
+.generator-actions,
+.theme-switcher {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 34px;
 }
 
-.button {
+.theme-switcher {
+  margin-top: 16px;
+}
+
+.button,
+.theme-button {
   min-width: 126px;
   padding: 12px 16px;
   border: 1px solid var(--line);
@@ -177,12 +199,15 @@ h1 {
 }
 
 .button:hover,
-.mode:hover {
+.mode:hover,
+.theme-button:hover,
+.sound-button:hover {
   transform: translateY(-1px);
   border-color: rgba(109, 255, 150, 0.7);
 }
 
-.button.primary {
+.button.primary,
+.theme-button.is-active {
   color: #031008;
   border-color: transparent;
   background: linear-gradient(135deg, var(--green), var(--acid));
@@ -243,14 +268,24 @@ h1 {
     rgba(255, 255, 255, 0.018);
 }
 
-.toy-band {
+.toy-band,
+.quest-band {
   background:
     linear-gradient(110deg, rgba(168, 121, 255, 0.12), transparent 44%),
     rgba(255, 255, 255, 0.012);
 }
 
+.quest-band {
+  padding: 86px 0;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(255, 178, 79, 0.09), transparent 42%),
+    rgba(255, 255, 255, 0.016);
+}
+
 .generator-layout,
-.toy-layout {
+.toy-layout,
+.quest-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
   gap: clamp(24px, 5vw, 72px);
@@ -258,7 +293,8 @@ h1 {
 }
 
 .generator-layout h2,
-.toy-layout h2 {
+.toy-layout h2,
+.quest-layout h2 {
   max-width: 680px;
   margin: 0;
   font-size: clamp(2.15rem, 5vw, 5.4rem);
@@ -276,6 +312,8 @@ h1 {
 
 .generator-card,
 .rage-console,
+.quest-board,
+.soundboard,
 .bits article {
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -286,6 +324,11 @@ h1 {
 
 .generator-card {
   padding: clamp(18px, 4vw, 28px);
+}
+
+.quest-board,
+.soundboard {
+  padding: clamp(18px, 4vw, 30px);
 }
 
 .rage-console {
@@ -393,6 +436,72 @@ h1 {
   line-height: 1.08;
 }
 
+.quest-card {
+  display: grid;
+  gap: 14px;
+  min-height: 230px;
+  padding: clamp(20px, 4vw, 32px);
+  margin: 24px 0 18px;
+  border: 1px solid rgba(255, 178, 79, 0.28);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(255, 178, 79, 0.12), transparent),
+    var(--panel-strong);
+}
+
+.quest-card span,
+.quest-card strong {
+  color: var(--acid);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.quest-card p {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 3rem);
+  font-weight: 900;
+  line-height: 1.04;
+}
+
+.sound-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sound-button {
+  min-height: 76px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font-weight: 900;
+  cursor: pointer;
+  background: rgba(5, 8, 11, 0.76);
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease;
+}
+
+.sound-output {
+  min-height: 108px;
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(101, 216, 255, 0.25);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: clamp(1.2rem, 2vw, 1.85rem);
+  font-weight: 900;
+  line-height: 1.1;
+  background: rgba(5, 8, 11, 0.6);
+}
+
+.sound-output.is-yelling {
+  color: var(--ink);
+  animation: glitch 420ms steps(2, end);
+}
+
 .segmented {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -489,6 +598,25 @@ h1 {
   }
 }
 
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px) skewX(-3deg);
+  }
+
+  50% {
+    transform: translateX(4px) skewX(3deg);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
 @media (max-width: 840px) {
   .shell {
     width: min(100% - 24px, 640px);
@@ -497,6 +625,7 @@ h1 {
   .hero-grid,
   .generator-layout,
   .toy-layout,
+  .quest-layout,
   .bits {
     grid-template-columns: 1fr;
   }
@@ -519,12 +648,14 @@ h1 {
   }
 
   .generator-band,
-  .toy-band {
+  .toy-band,
+  .quest-band {
     padding: 58px 0;
   }
 
   .segmented,
-  .oracle-input {
+  .oracle-input,
+  .sound-grid {
     grid-template-columns: 1fr;
   }
 

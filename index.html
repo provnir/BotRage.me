@@ -34,6 +34,11 @@
               <a class="button primary" href="#generator">Generate Chaos</a>
               <a class="button" href="https://github.com/provnir/IllidanBotRage">GitHub</a>
             </div>
+            <div class="theme-switcher" role="group" aria-label="Theme mode">
+              <button class="theme-button is-active" type="button" data-theme="fel">Fel</button>
+              <button class="theme-button" type="button" data-theme="arcane">Arcane</button>
+              <button class="theme-button" type="button" data-theme="junkyard">Junkyard</button>
+            </div>
           </div>
 
           <aside class="avatar-panel" aria-label="Illidan Bot Rage visual profile">
@@ -138,6 +143,34 @@
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quest-band" aria-labelledby="quest-title">
+        <div class="shell quest-layout">
+          <div class="quest-board">
+            <p class="eyebrow">Tiny quest board</p>
+            <h2 id="quest-title">Accept a pointless mission.</h2>
+            <div class="quest-card" aria-live="polite">
+              <span id="questRank">Rank B</span>
+              <p id="questText">Defeat three stale tabs before they multiply.</p>
+              <strong id="questReward">Reward: one smug refresh</strong>
+            </div>
+            <button class="button primary" id="questButton" type="button">New Quest</button>
+          </div>
+
+          <div class="soundboard" aria-label="Visual soundboard">
+            <p class="eyebrow">Silent soundboard</p>
+            <div class="sound-grid">
+              <button class="sound-button" type="button" data-yell="You are not prepared.">Prepared?</button>
+              <button class="sound-button" type="button" data-yell="Behold: dramatic competence.">Behold</button>
+              <button class="sound-button" type="button" data-yell="The logs remember everything.">Logs</button>
+              <button class="sound-button" type="button" data-yell="Tiny chaos, responsibly contained.">Chaos</button>
+            </div>
+            <p id="soundOutput" class="sound-output" aria-live="polite">
+              Press a button. The page will yell quietly.
+            </p>
           </div>
         </div>
       </section>
