@@ -41,13 +41,13 @@ body.illidan-page {
 }
 
 body.npas-page {
-  --green: #57d39a;
-  --acid: #8de7ff;
-  --violet: #8a96a8;
-  --cyan: #52b6ff;
-  --ember: #f0c45c;
-  --muted: #b5c1c8;
-  --line: rgba(141, 231, 255, 0.24);
+  --green: #8b5cf6;
+  --acid: #c4b5fd;
+  --violet: #6366f1;
+  --cyan: #a78bfa;
+  --ember: #e9d5ff;
+  --muted: #cec8e7;
+  --line: rgba(167, 139, 250, 0.3);
 }
 
 body.pugna-page {
@@ -144,9 +144,10 @@ body {
 
 .npas-page {
   background:
-    linear-gradient(180deg, rgba(82, 182, 255, 0.11), transparent 38%),
-    linear-gradient(90deg, rgba(87, 211, 154, 0.08), transparent 46%),
-    #071014;
+    linear-gradient(180deg, rgba(99, 102, 241, 0.18), transparent 38%),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.16), transparent 46%),
+    radial-gradient(circle at 74% 20%, rgba(196, 181, 253, 0.12), transparent 28%),
+    #080717;
 }
 
 .pugna-page {
@@ -360,6 +361,26 @@ body {
     rgba(6, 16, 6, 0.86);
 }
 
+.illidan-avatar-card {
+  background:
+    linear-gradient(155deg, rgba(109, 255, 150, 0.24), rgba(168, 121, 255, 0.16)),
+    rgba(7, 11, 15, 0.86);
+}
+
+.npas-logo-card {
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  background:
+    linear-gradient(155deg, rgba(99, 102, 241, 0.28), rgba(139, 92, 246, 0.18)),
+    rgba(8, 7, 23, 0.86);
+}
+
+.npas-logo-card img {
+  width: min(72%, 230px);
+  filter: drop-shadow(0 22px 42px rgba(99, 102, 241, 0.34));
+}
+
 .brag-panel {
   max-width: 920px;
   padding: clamp(22px, 4vw, 36px);
@@ -440,14 +461,15 @@ body {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(82, 182, 255, 0.08), transparent),
-    rgba(7, 16, 20, 0.7);
+    linear-gradient(180deg, rgba(99, 102, 241, 0.12), transparent),
+    linear-gradient(245deg, rgba(139, 92, 246, 0.11), transparent 54%),
+    rgba(8, 7, 23, 0.76);
 }
 
 .metric-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 52%),
-    rgba(10, 20, 25, 0.82);
+    rgba(13, 10, 33, 0.84);
 }
 
 .metric-card::after {
@@ -456,7 +478,7 @@ body {
   margin-top: auto;
   content: "";
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), var(--cyan));
+  background: linear-gradient(90deg, var(--violet), var(--green));
 }
 
 .tome-theme {
