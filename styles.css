@@ -51,23 +51,23 @@ body.npas-page {
 }
 
 body.pugna-page {
-  --green: #c68bff;
-  --acid: #f2d67b;
-  --violet: #9a6dff;
-  --cyan: #78e0ff;
-  --ember: #ff7777;
-  --muted: #c3b6d8;
-  --line: rgba(242, 214, 123, 0.28);
+  --green: #a7ff21;
+  --acid: #d5ff4d;
+  --violet: #79b51d;
+  --cyan: #4cff63;
+  --ember: #86ff00;
+  --muted: #b9c9aa;
+  --line: rgba(167, 255, 33, 0.32);
 }
 
 body.zoe-page {
-  --green: #5ee6a7;
-  --acid: #ffe28a;
-  --violet: #f6a8c8;
-  --cyan: #83ddff;
-  --ember: #ffb984;
-  --muted: #bfd7ca;
-  --line: rgba(94, 230, 167, 0.24);
+  --green: #7ee7c4;
+  --acid: #ffe36d;
+  --violet: #ff7aa8;
+  --cyan: #9feee2;
+  --ember: #ffb35c;
+  --muted: #ffe3d4;
+  --line: rgba(255, 122, 168, 0.3);
 }
 
 * {
@@ -151,16 +151,18 @@ body {
 
 .pugna-page {
   background:
-    linear-gradient(125deg, rgba(198, 139, 255, 0.16), transparent 34%),
-    linear-gradient(245deg, rgba(242, 214, 123, 0.1), transparent 38%),
-    #0b0710;
+    linear-gradient(125deg, rgba(167, 255, 33, 0.16), transparent 34%),
+    linear-gradient(245deg, rgba(58, 92, 22, 0.34), transparent 42%),
+    radial-gradient(circle at 78% 24%, rgba(213, 255, 77, 0.14), transparent 26%),
+    #061006;
 }
 
 .zoe-page {
   background:
-    linear-gradient(140deg, rgba(94, 230, 167, 0.12), transparent 36%),
-    linear-gradient(235deg, rgba(246, 168, 200, 0.12), transparent 40%),
-    #06100d;
+    linear-gradient(140deg, rgba(255, 122, 168, 0.22), transparent 36%),
+    linear-gradient(235deg, rgba(255, 227, 109, 0.18), transparent 43%),
+    radial-gradient(circle at 75% 18%, rgba(255, 179, 92, 0.12), transparent 28%),
+    #15090c;
 }
 
 .clean-hero {
@@ -322,6 +324,42 @@ body {
   border-radius: 12px;
 }
 
+.product-avatar {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(13, 18, 24, 0.72);
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38);
+}
+
+.product-avatar::before {
+  position: absolute;
+  inset: -13px;
+  z-index: -1;
+  content: "";
+  border: 1px solid color-mix(in srgb, var(--acid), transparent 54%);
+  border-radius: 20px;
+  transform: rotate(-2deg);
+}
+
+.product-avatar img {
+  border: 0;
+  border-radius: 10px;
+}
+
+.zoe-avatar-card {
+  background:
+    linear-gradient(155deg, rgba(255, 122, 168, 0.24), rgba(255, 227, 109, 0.13)),
+    rgba(35, 12, 18, 0.82);
+}
+
+.pugna-avatar-card {
+  background:
+    linear-gradient(155deg, rgba(167, 255, 33, 0.22), rgba(12, 22, 11, 0.86)),
+    rgba(6, 16, 6, 0.86);
+}
+
 .brag-panel {
   max-width: 920px;
   padding: clamp(22px, 4vw, 36px);
@@ -429,15 +467,15 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(198, 139, 255, 0.14), transparent 58%),
-    rgba(13, 8, 20, 0.82);
+    linear-gradient(145deg, rgba(167, 255, 33, 0.16), transparent 58%),
+    rgba(7, 18, 7, 0.86);
 }
 
 .rune-card::before {
   position: absolute;
   right: 14px;
   bottom: -10px;
-  color: rgba(242, 214, 123, 0.18);
+  color: rgba(213, 255, 77, 0.2);
   content: "✦";
   font-size: 5.2rem;
   line-height: 1;
@@ -450,8 +488,9 @@ body {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(94, 230, 167, 0.1), transparent 42%),
-    rgba(7, 17, 13, 0.72);
+    linear-gradient(180deg, rgba(255, 122, 168, 0.18), transparent 42%),
+    linear-gradient(240deg, rgba(255, 227, 109, 0.14), transparent 48%),
+    rgba(35, 12, 18, 0.76);
 }
 
 .chat-bubble {
@@ -463,7 +502,7 @@ body {
 }
 
 .chat-bubble.incoming {
-  background: rgba(20, 36, 30, 0.92);
+  background: rgba(76, 24, 36, 0.92);
 }
 
 .chat-bubble.outgoing {
