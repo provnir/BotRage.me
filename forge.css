@@ -11,15 +11,15 @@
    is excepted back to gold + vermilion, so the Forge reads as an exhibit
    inside the publication rather than a different website.
 
-   Raw hex is legal ONLY inside the token block in §1 and in the two rage-glow
+   Raw hex is legal ONLY inside the palette block in §1 and in the two rage-glow
    gradients in §7 (they are part of the preserved artifact).
 
-   Order: 1 tokens · 2 page rhythm · 3 folios & labels · 4 theme row
+   Order: 1 palette · 2 page rhythm · 3 folios & labels · 4 theme row
           5 segmented + modes · 6 meme stage · 7 rage console · 8 oracle
           9 quest + soundboard · 10 operator deck · 11 bits · 12 reduced motion
    ========================================================================= */
 
-/* ── 1. TOKENS — the quarantine ────────────────────────────────────────── */
+/* ── 1. PALETTE — the quarantine ────────────────────────────────────────── */
 
 body.forge-page {
   --pigment: #D8FF65;
