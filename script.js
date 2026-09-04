@@ -361,7 +361,14 @@ for (const button of operatorCommands) {
   button.addEventListener("click", () => runOperatorCommand(button.dataset.command));
 }
 
-setInterval(rotateOperatorStatus, 5200);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let operatorTicker = null;
+function syncOperatorTicker() {
+  if (operatorTicker) { clearInterval(operatorTicker); operatorTicker = null; }
+  if (!reduceMotion.matches) operatorTicker = setInterval(rotateOperatorStatus, 5200);
+}
+syncOperatorTicker();
+reduceMotion.addEventListener("change", syncOperatorTicker);
 
 setTheme("fel");
 setOperatorMeter(operatorMeterValue);
