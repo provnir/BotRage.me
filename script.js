@@ -155,11 +155,39 @@ function setMode(mode) {
   pickLine();
 }
 
+function copyFallback(text) {
+  // navigator.clipboard is undefined on file:// in several browsers, and
+  // file:// has to work. Fall back to the old selection trick.
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.setAttribute("readonly", "");
+  field.style.position = "fixed";
+  field.style.top = "-1000px";
+  document.body.append(field);
+  field.select();
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch (error) {
+    copied = false;
+  }
+  field.remove();
+  return copied;
+}
+
 async function copyLine() {
   const text = quoteText.textContent.trim();
-  if (!navigator.clipboard) return;
-  await navigator.clipboard.writeText(text);
-  copyButton.textContent = "Copied";
+  let copied = false;
+  if (navigator.clipboard) {
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch (error) {
+      copied = false;
+    }
+  }
+  if (!copied) copied = copyFallback(text);
+  copyButton.textContent = copied ? "Copied" : "Copy failed";
   window.setTimeout(() => {
     copyButton.textContent = "Copy";
   }, 1200);
