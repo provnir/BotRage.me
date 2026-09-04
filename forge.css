@@ -127,7 +127,6 @@ body.forge-page[data-theme="junkyard"] {
 /* The quarantine label. Editorial gold — it is the museum card, not the exhibit. */
 .forge-note {
   margin-top: var(--s-7);
-  max-width: var(--measure);
   background: var(--surface-well);
   box-shadow: var(--e-well);
   border: 1px solid var(--gold-soft);
@@ -138,6 +137,7 @@ body.forge-page[data-theme="junkyard"] {
 .forge-note .section-head__kicker { color: var(--gold); }
 .forge-note p + p {
   margin-top: var(--s-3);
+  max-width: var(--measure);
   font-size: var(--t-small); line-height: 1.6; color: var(--paper-dim);
 }
 
