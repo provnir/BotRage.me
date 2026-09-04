@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-subject="tori">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C0D10">
+<title>Tori · botrage.me</title>
+<meta name="description" content="Tori: medical appointment scheduling and insurance claims on one platform. In development, under the Provizor IT Services umbrella.">
+<link rel="icon" href="assets/bob-avatar.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="entry-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/bob-avatar.svg" alt="" width="20" height="20">
+      <span class="brand__word">botrage.me</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Chapters">
+      <a class="masthead__link is-current" aria-current="true" href="index.html#projects">Projects</a>
+      <a class="masthead__link" href="index.html#fleet">Fleet</a>
+      <a class="masthead__link" href="index.html#archive">Archive</a>
+      <a class="masthead__link" href="fun.html">Forge</a>
+    </nav>
+  </div>
+</header>
+
+<div class="running-head">
+  <div class="shell running-head__inner">
+    <a class="running-head__chapter" href="index.html#projects">CHAPTER I · PROJECTS</a>
+    <span class="folio"><b>02</b> · IN DEVELOPMENT</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="shell" aria-labelledby="tori-title">
+    <div class="section-head">
+      <p class="section-head__kicker">Product build</p>
+      <h1 id="tori-title">Tori</h1>
+      <p class="section-head__deck">Medical appointment scheduling and insurance claims on one platform — in development, also under the Provizor umbrella.</p>
+    </div>
+
+    <figure class="plate plate--logo">
+      <p class="plate__fig">FIG. 02</p>
+      <img class="plate__img" src="assets/tori-logo.svg" alt="Tori logo" width="96" height="96" loading="lazy" decoding="async">
+      <figcaption>
+        <p class="plate__name">Tori</p>
+        <p class="plate__caption">Scheduling · Claims · Provizor · In development</p>
+      </figcaption>
+    </figure>
+
+    <div class="spec-panel">
+      <dl class="spec">
+        <dt>Product</dt>
+        <dd>Medical appointment scheduling and insurance claims, on one platform</dd>
+        <dt>Umbrella</dt>
+        <dd>Provizor IT Services (provizor.co.il)</dd>
+        <dt>Domains</dt>
+        <dd>tori.md · torimedical.com</dd>
+        <dt>Scope</dt>
+        <dd>Booking, claims, and the administration around both</dd>
+        <dt>Status</dt>
+        <dd><span class="chip chip--building">In development</span></dd>
+      </dl>
+    </div>
+
+  </section>
+
+  <section class="shell">
+    <section aria-labelledby="tori-what">
+      <div class="section-head">
+        <h2 class="section-head__kicker" id="tori-what">What it is</h2>
+      </div>
+      <div class="prose">
+        <p>Tori is the second entry under the Provizor umbrella, and the harder one. It takes two jobs that a clinic normally runs on separate rails — getting a patient into an appointment, and getting the insurance claim for that appointment paid — and builds them as one platform instead of two systems that email each other.</p>
+        <p>It is in development, and this entry will not pretend otherwise: no launch date, no waiting list, no screenshot of a dashboard that does not exist yet. It answers to two names — <b>tori.md</b> and <b>torimedical.com</b> — and it will get an entry with links in it when there is something behind them.</p>
+        <p class="marginalia"><span class="marginalia__label">See also</span>Entry 01 — the same umbrella, the same pipeline, several years older.</p>
+        <p>Scheduling is the part a patient sees: a slot, a confirmation, a reminder that arrives at a useful hour. It is also the part that breaks first, because a real clinic day is a chain of small emergencies and every one of them moves somebody else's appointment.</p>
+        <p>Claims is the half nobody sees and everybody feels. A rejection is rarely a medical disagreement; it is a field in the wrong format, a code that changed in the spring, a document attached to the wrong submission. That work is repetitive, rule-shaped and expensive — which is precisely the shape that automates well, and precisely the shape that punishes guessing.</p>
+        <p class="pull">Booking is the easy half.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="tori-build">
+      <div class="section-head">
+        <h2 class="section-head__kicker" id="tori-build">What's being built</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="timeline__date">01</span>
+          <div class="timeline__body">
+            <h3>Scheduling</h3>
+            <p>Availability, booking, confirmations and reminders — and the reshuffle for when a clinic's day falls apart at 09:40. Calendars are easy. The exceptions are the product.</p>
+          </div>
+        </li>
+        <li>
+          <span class="timeline__date">02</span>
+          <div class="timeline__body">
+            <h3>Claims</h3>
+            <p>Insurance claims from submission through to whatever comes back. Rules that differ per insurer, forms that reject on a technicality, and a queue that remembers what has already been tried so nobody re-files the same mistake twice.</p>
+          </div>
+        </li>
+        <li>
+          <span class="timeline__date">03</span>
+          <div class="timeline__body">
+            <h3>Everything around it</h3>
+            <p>The unglamorous half: records, permissions, an audit trail, and admin screens plain enough that the front desk will actually use them on a bad morning. This is usually where scheduling products quietly fail.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chapter pager">
+  <div class="shell pager__grid">
+    <a class="pager__prev" href="npas.html"><span class="pager__label">← Previous in chapter</span><span class="pager__name"><b class="pager__num">01</b> NPAS</span></a>
+    <a class="pager__up" href="index.html#projects">↑ CHAPTER I — PROJECTS</a>
+    <div class="pager__spacer"></div>
+  </div>
+</nav>
+
+<footer class="site-footer">
+  <div class="shell">
+    <nav class="footer__grid" aria-label="Sitemap">
+      <div class="footer__group">
+        <h2 class="footer__heading">I · Projects</h2>
+        <ul class="footer__list">
+          <li><a href="npas.html">01 NPAS</a></li>
+          <li><a href="tori.html">02 Tori</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">II · The Live Fleet</h2>
+        <ul class="footer__list">
+          <li><a href="bob.html">03 Bob</a></li>
+          <li><a href="zoe.html">04 Zoe</a></li>
+          <li><a href="pugna.html">05 Pugna</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">III · The Archive</h2>
+        <ul class="footer__list">
+          <li><a href="illidan.html">00 Illidan</a></li>
+          <li><a href="fenix.html">0∞ Fenix</a></li>
+          <li><a href="fun.html">✦ The Fun Forge</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">This publication</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Contents</a></li>
+          <li><a href="botrage.html">Colophon</a></li>
+          <li><a href="https://github.com/provnir/BotRage.me">Source repository</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer__colophon">botrage.me · founded by Illidan, kept by Bob · static, no tracking</p>
+  </div>
+</footer>
+</body>
+</html>

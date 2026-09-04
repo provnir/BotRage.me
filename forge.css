@@ -187,6 +187,8 @@ body.forge-page[data-theme="junkyard"] {
 /* ── 5. SEGMENTED CONTROL + QUOTE WELL ─────────────────────────────────── */
 
 .segmented { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); }
+/* The three labels have to survive a 320px column without spilling the panel. */
+.segmented .mode { padding-inline: var(--s-2); }
 
 /* Before the first click no .mode carries is-active (the contract gate requires
    a bare class="mode" on all three), so the first flavour shows the active look
@@ -410,7 +412,7 @@ body.forge-page[data-theme="junkyard"] {
   max-height: 260px; overflow-y: auto;
 }
 .operator-log li {
-  display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: var(--s-3);
+  display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: var(--s-3);
   padding-block: var(--s-2);
   border-top: 1px solid var(--rule);
   font-family: var(--font-mono);
@@ -418,7 +420,7 @@ body.forge-page[data-theme="junkyard"] {
   color: var(--paper-dim);
 }
 .operator-log li:first-child { border-top: 0; }
-.operator-log li span { color: var(--pigment); font-variant-numeric: tabular-nums; }
+.operator-log li span { color: var(--pigment); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ── 11. THREE NOTES ───────────────────────────────────────────────────── */
 

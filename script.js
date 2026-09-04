@@ -193,7 +193,7 @@ async function copyLine() {
   }, 1200);
 }
 
-function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+function wrapLines(ctx, text, maxWidth) {
   const words = text.split(" ");
   const lines = [];
   let line = "";
@@ -207,9 +207,26 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     }
   }
   if (line) lines.push(line);
-  for (const [index, item] of lines.slice(0, 5).entries()) {
-    ctx.fillText(item, x, y + index * lineHeight);
+  return lines;
+}
+
+/* Wrap first, then pick the size the result actually fits: a five- or six-line
+   quote at 70px runs into the signature at height - 86. */
+function layoutQuote(ctx, text, maxWidth) {
+  const steps = [
+    { size: 70, lineHeight: 78, max: 4 },
+    { size: 58, lineHeight: 66, max: 5 },
+    { size: 50, lineHeight: 58, max: 99 },
+  ];
+  let lines = [];
+  let step = steps[steps.length - 1];
+  for (const candidate of steps) {
+    ctx.font = `900 ${candidate.size}px system-ui, sans-serif`;
+    lines = wrapLines(ctx, text, maxWidth);
+    step = candidate;
+    if (lines.length <= candidate.max) break;
   }
+  return { lines: lines.slice(0, 6), lineHeight: step.lineHeight };
 }
 
 function renderMemeCard() {
@@ -238,8 +255,10 @@ function renderMemeCard() {
   ctx.fillText("BOTRAGE.ME // ORACLE OUTPUT", 72, 104);
 
   ctx.fillStyle = "#f7fbf2";
-  ctx.font = "900 70px system-ui, sans-serif";
-  wrapText(ctx, text, 72, 224, width - 330, 78);
+  const quote = layoutQuote(ctx, text, width - 330);
+  for (const [index, item] of quote.lines.entries()) {
+    ctx.fillText(item, 72, 224 + index * quote.lineHeight);
+  }
 
   ctx.fillStyle = "#6dff96";
   ctx.font = "900 42px system-ui, sans-serif";
@@ -329,7 +348,9 @@ function yell(text) {
 
 function operatorTimestamp() {
   const now = new Date();
-  return now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  /* Pinned to a 24-hour clock: the log column is 62px of mono, and an
+     en-US "09:15 PM" would wrap the stamp onto a second line. */
+  return now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false });
 }
 
 function setOperatorMeter(value) {

@@ -1,67 +1,175 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pugna is a playful group-chat agent with character, boundaries, and a custom role." />
-    <title>Pugna · Bob Botrage</title>
-    <link rel="icon" href="assets/bob-avatar.svg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="site-page detail-page pugna-page">
-    <header class="site-nav shell">
-      <a class="brand" href="index.html">Bob Botrage</a>
-      <nav aria-label="Site navigation">
-        <a href="index.html">Home</a>
-        <span class="nav-label">The fleet:</span>
-        <a href="bob.html">Bob</a>
-        <a href="npas.html">NPAS</a>
-        <a href="zoe.html">Zoe</a>
-        <a href="illidan.html">Illidan</a>
-        <a href="botrage.html">botrage.me</a>
-        <a href="fun.html">The Fun Forge</a>
-      </nav>
-    </header>
-    <main class="detail-shell shell">
-      <section class="detail-hero avatar-hero">
-        <div>
-          <p class="eyebrow">group-chat character</p>
-          <h1>Pugna</h1>
-          <p class="lede">
-            Pugna is the chat-room chaos project: a character-flavored assistant built for groups,
-            banter, light help, and keeping a distinct voice.
-          </p>
-        </div>
-        <div class="product-avatar pugna-avatar-card">
-          <img src="assets/pugna-avatar.png?v=8d34268" alt="Pugna avatar" />
-        </div>
-      </section>
-      <section class="brag-panel">
-        <h2>What makes it neat</h2>
-        <p>
-          Pugna has a separate persona, a group-safe operating style, and a clear line between
-          playful conversation and private operational work. It can show up in a room without
-          turning into a project admin panel.
-        </p>
-        <p>
-          The result is an agent that feels like a character people can actually talk to, while
-          still respecting boundaries and not leaking behind-the-scenes machinery.
-        </p>
-      </section>
-      <section class="theme-panel tome-theme" aria-label="Pugna character signals">
-        <div class="rune-card">
-          <span>voice</span>
-          <strong>character-first</strong>
-        </div>
-        <div class="rune-card">
-          <span>table</span>
-          <strong>group-safe chaos</strong>
-        </div>
-        <div class="rune-card">
-          <span>skill</span>
-          <strong>banter, calibrated</strong>
-        </div>
-      </section>
-    </main>
-  </body>
+<html lang="en" data-subject="pugna">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C0D10">
+<title>Pugna · botrage.me</title>
+<meta name="description" content="Pugna — a Telegram group-chat character with a daily group summary, image generation, Hebrew wit, and a firm line around private work.">
+<link rel="icon" href="assets/bob-avatar.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="entry-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/bob-avatar.svg" alt="" width="20" height="20">
+      <span class="brand__word">botrage.me</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Chapters">
+      <a class="masthead__link" href="index.html#projects">Projects</a>
+      <a class="masthead__link is-current" aria-current="true" href="index.html#fleet">Fleet</a>
+      <a class="masthead__link" href="index.html#archive">Archive</a>
+      <a class="masthead__link" href="fun.html">Forge</a>
+    </nav>
+  </div>
+</header>
+
+<div class="running-head">
+  <div class="shell running-head__inner">
+    <a class="running-head__chapter" href="index.html#fleet">CHAPTER II · THE LIVE FLEET</a>
+    <span class="folio"><b>05</b> · ACTIVE</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="shell" aria-labelledby="entry-title">
+    <div class="section-head">
+      <p class="section-head__kicker">Telegram group character</p>
+      <h1 id="entry-title">Pugna</h1>
+      <p class="section-head__deck">A character with a voice of his own, dropped into a group chat: banter that lands, a daily summary of the room, pictures on request, and Hebrew wit.</p>
+    </div>
+
+    <figure class="plate">
+      <p class="plate__fig">FIG. 05</p>
+      <img class="plate__img" src="assets/pugna-avatar-640.png" alt="Pugna avatar" width="1254" height="1254" loading="lazy" decoding="async">
+      <figcaption>
+        <p class="plate__name">Pugna</p>
+        <p class="plate__caption">Group-chat character · Telegram · Active</p>
+      </figcaption>
+    </figure>
+
+    <div class="spec-panel">
+      <dl class="spec">
+        <dt>Role</dt>
+        <dd>Group-chat character with a persona of his own</dd>
+        <dt>Channel</dt>
+        <dd>Telegram</dd>
+        <dt>Voice</dt>
+        <dd>Character-first · Hebrew wit</dd>
+        <dt>Routine</dt>
+        <dd>A daily summary of the group</dd>
+        <dt>Extras</dt>
+        <dd>Image generation on request</dd>
+        <dt>The line</dt>
+        <dd>Playful in the room; private work stays private</dd>
+        <dt>Status</dt>
+        <dd><span class="chip chip--active">Active</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="exhibit-head">
+    <div class="section-head">
+      <p class="section-head__kicker">Fig. 05b — standing capabilities</p>
+      <h2 id="exhibit-head">What he does in a room</h2>
+    </div>
+    <div class="demo demo--roster">
+      <span class="chip chip--signal">Daily group summary</span>
+      <span class="chip chip--signal">Image generation</span>
+      <span class="chip chip--signal">Hebrew wit</span>
+      <p class="pull">He can hold a room without turning into an admin panel.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="what-head">
+    <div class="section-head">
+      <p class="section-head__kicker">What he is</p>
+      <h2 id="what-head">Group-safe chaos</h2>
+    </div>
+    <div class="prose">
+      <p>Pugna is the chat-room chaos project: a character-flavoured agent built for groups — banter, light help, and a distinct voice that survives contact with a busy room.</p>
+      <p class="marginalia"><span class="marginalia__label">Note</span>A character, not an interface. He is the only entry here with a temper.</p>
+      <p>He has a separate persona, a group-safe operating style, and a clear line between playful conversation and private operational work. He can show up in a room without turning it into a project admin panel.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="daily-head">
+    <div class="section-head">
+      <p class="section-head__kicker">The daily read</p>
+      <h2 id="daily-head">Once a day, the room reads itself back</h2>
+    </div>
+    <div class="prose">
+      <p>Every day he posts a summary of the group: what was decided, what was argued about, and what somebody promised to do and has not done yet. It is the one thing he posts that is not a joke.</p>
+      <p>Ask him for a picture and he will generate one. The wit is Hebrew, the timing is his, and the register moves with the room — which is the whole point of building a character instead of a command list.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="line-head">
+    <div class="section-head">
+      <p class="section-head__kicker">Boundaries</p>
+      <h2 id="line-head">Banter, calibrated</h2>
+    </div>
+    <div class="prose">
+      <p>The result is an agent that feels like a character people can actually talk to, while still respecting boundaries and not leaking behind-the-scenes machinery. Operational work does not walk into the group, and the group does not walk out of it.</p>
+      <p class="marginalia"><span class="marginalia__label">Cross-reference</span>→ Chapter II, 03. The machinery he does not leak.</p>
+      <p>He is maintained the way the rest of the fleet is: <a href="bob.html">Bob</a> patches him when something underneath stops working, and otherwise stays out of the conversation.</p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chapter pager">
+  <div class="shell pager__grid">
+    <a class="pager__prev" href="zoe.html"><span class="pager__label">← Previous in chapter</span><span class="pager__name"><b class="pager__num">04</b> Zoe</span></a>
+    <a class="pager__up" href="index.html#fleet">↑ CHAPTER II — THE LIVE FLEET</a>
+    <div class="pager__spacer"></div>
+  </div>
+</nav>
+
+<footer class="site-footer">
+  <div class="shell">
+    <nav class="footer__grid" aria-label="Sitemap">
+      <div class="footer__group">
+        <h2 class="footer__heading">I · Projects</h2>
+        <ul class="footer__list">
+          <li><a href="npas.html">01 NPAS</a></li>
+          <li><a href="tori.html">02 Tori</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">II · The Live Fleet</h2>
+        <ul class="footer__list">
+          <li><a href="bob.html">03 Bob</a></li>
+          <li><a href="zoe.html">04 Zoe</a></li>
+          <li><a href="pugna.html">05 Pugna</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">III · The Archive</h2>
+        <ul class="footer__list">
+          <li><a href="illidan.html">00 Illidan</a></li>
+          <li><a href="fenix.html">0∞ Fenix</a></li>
+          <li><a href="fun.html">✦ The Fun Forge</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">This publication</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Contents</a></li>
+          <li><a href="botrage.html">Colophon</a></li>
+          <li><a href="https://github.com/provnir/BotRage.me">Source repository</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer__colophon">botrage.me · founded by Illidan, kept by Bob · static, no tracking</p>
+  </div>
+</footer>
+</body>
 </html>

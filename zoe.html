@@ -1,58 +1,179 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Zoe is a warm WhatsApp assistant for everyday help, scheduling, reminders, and useful drafts." />
-    <title>Zoe · Bob Botrage</title>
-    <link rel="icon" href="assets/bob-avatar.svg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="site-page detail-page zoe-page">
-    <header class="site-nav shell">
-      <a class="brand" href="index.html">Bob Botrage</a>
-      <nav aria-label="Site navigation">
-        <a href="index.html">Home</a>
-        <span class="nav-label">The fleet:</span>
-        <a href="bob.html">Bob</a>
-        <a href="npas.html">NPAS</a>
-        <a href="pugna.html">Pugna</a>
-        <a href="illidan.html">Illidan</a>
-        <a href="botrage.html">botrage.me</a>
-        <a href="fun.html">The Fun Forge</a>
-      </nav>
-    </header>
-    <main class="detail-shell shell">
-      <section class="detail-hero avatar-hero">
-        <div>
-          <p class="eyebrow">personal assistant</p>
-          <h1>Zoe</h1>
-          <p class="lede">
-            Zoe is a friendly WhatsApp assistant: casual Hebrew by default, warm but not noisy, and
-            useful for daily life.
-          </p>
-        </div>
-        <div class="product-avatar zoe-avatar-card">
-          <img src="assets/zoe-avatar.png?v=8d34268" alt="Zoe avatar" />
-        </div>
-      </section>
-      <section class="brag-panel">
-        <h2>What Zoe is for</h2>
-        <p>
-          Zoe helps with scheduling, reminders, trip ideas, lightweight research, drafting messages,
-          and organizing practical work. She is designed to feel approachable and human-friendly
-          without pretending to be a human.
-        </p>
-        <p>
-          She also has a thoughtful tone system: Hebrew-first, RTL-aware, emoji-aware, and able to
-          use message reactions when a tiny bit of warmth says more than another full reply.
-        </p>
-      </section>
-      <section class="theme-panel chat-theme" aria-label="Zoe assistant signals">
-        <div class="chat-bubble incoming">אפשר לעזור רגע?</div>
-        <div class="chat-bubble outgoing">כן, אני על זה.</div>
-        <div class="chat-bubble incoming">תזכורת, ניסוח, או בדיקה קטנה?</div>
-      </section>
-    </main>
-  </body>
+<html lang="en" data-subject="zoe">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C0D10">
+<title>Zoe · botrage.me</title>
+<meta name="description" content="Zoe — a warm WhatsApp assistant that speaks Hebrew first: reminders, drafts and small daily logistics, running on the Hermes agent framework.">
+<link rel="icon" href="assets/bob-avatar.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="entry-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/bob-avatar.svg" alt="" width="20" height="20">
+      <span class="brand__word">botrage.me</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Chapters">
+      <a class="masthead__link" href="index.html#projects">Projects</a>
+      <a class="masthead__link is-current" aria-current="true" href="index.html#fleet">Fleet</a>
+      <a class="masthead__link" href="index.html#archive">Archive</a>
+      <a class="masthead__link" href="fun.html">Forge</a>
+    </nav>
+  </div>
+</header>
+
+<div class="running-head">
+  <div class="shell running-head__inner">
+    <a class="running-head__chapter" href="index.html#fleet">CHAPTER II · THE LIVE FLEET</a>
+    <span class="folio"><b>04</b> · ACTIVE</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="shell" aria-labelledby="entry-title">
+    <div class="section-head">
+      <p class="section-head__kicker">WhatsApp assistant · Hebrew-first</p>
+      <h1 id="entry-title">Zoe</h1>
+      <p class="section-head__deck">Warm, practical help on WhatsApp: reminders, drafts, and the small logistics of a day — in casual Hebrew, and never louder than the question deserves.</p>
+    </div>
+
+    <figure class="plate">
+      <p class="plate__fig">FIG. 04</p>
+      <img class="plate__img" src="assets/zoe-avatar-640.png" alt="Zoe avatar" width="1254" height="1254" loading="lazy" decoding="async">
+      <figcaption>
+        <p class="plate__name">Zoe</p>
+        <p class="plate__caption">WhatsApp assistant · Hebrew-first · Active</p>
+      </figcaption>
+    </figure>
+
+    <div class="spec-panel">
+      <dl class="spec">
+        <dt>Role</dt>
+        <dd>Everyday assistant — reminders, drafts, small logistics</dd>
+        <dt>Channel</dt>
+        <dd>WhatsApp</dd>
+        <dt>Language</dt>
+        <dd>Hebrew first · right-to-left aware · emoji-aware</dd>
+        <dt>Runs on</dt>
+        <dd>The Hermes agent framework</dd>
+        <dt>Tone</dt>
+        <dd>Warm, but not noisy</dd>
+        <dt>Status</dt>
+        <dd><span class="chip chip--active">Active</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="exhibit-head">
+    <div class="section-head">
+      <p class="section-head__kicker">Fig. 04b — transcript, translated below</p>
+      <h2 id="exhibit-head">A minute of Zoe</h2>
+      <p class="section-head__deck">A specimen exchange, written for this page. Real conversations stay where they happened.</p>
+    </div>
+    <div class="demo chat-demo">
+      <div class="chat-log" dir="rtl" lang="he">
+        <p class="bubble bubble--in" dir="rtl" lang="he">אפשר לעזור רגע?</p>
+        <span class="chat-gloss" dir="ltr" lang="en">“Can you help for a second?”</span>
+        <p class="bubble bubble--out" dir="rtl" lang="he">כן, אני על זה.</p>
+        <span class="chat-gloss" dir="ltr" lang="en">“Yes — I'm on it.”</span>
+        <p class="bubble bubble--out" dir="rtl" lang="he">תזכורת, ניסוח, או בדיקה קטנה?</p>
+        <span class="chat-gloss" dir="ltr" lang="en">“A reminder, a phrasing, or a small check?”</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="forwhat-head">
+    <div class="section-head">
+      <p class="section-head__kicker">What she is for</p>
+      <h2 id="forwhat-head">Small logistics, handled</h2>
+    </div>
+    <div class="prose">
+      <p>Zoe takes the ordinary parts of a week: scheduling, reminders, trip ideas, lightweight research, drafting the message you do not want to write twice, and keeping practical work in one place instead of six.</p>
+      <p class="marginalia"><span class="marginalia__label">Note</span>Everyday help, not a help desk. She answers in the app people already have open.</p>
+      <p>She is designed to feel approachable and human-friendly without pretending to be a human. She says what she did, and she says what she could not do.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="talks-head">
+    <div class="section-head">
+      <p class="section-head__kicker">How she talks</p>
+      <h2 id="talks-head">Hebrew first</h2>
+    </div>
+    <div class="prose">
+      <p>Casual Hebrew by default, right-to-left aware, emoji-aware, and willing to answer with a reaction when a small bit of warmth says more than another full paragraph.</p>
+      <p class="pull">Warm, but not noisy.</p>
+      <p>The tone system is the actual design work. An assistant that answers everything at the same volume becomes furniture; one that answers too much becomes a nuisance. Zoe is tuned to be neither — present when asked, quiet when not.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="runs-head">
+    <div class="section-head">
+      <p class="section-head__kicker">What she runs on</p>
+      <h2 id="runs-head">The Hermes frame</h2>
+    </div>
+    <div class="prose">
+      <p>Zoe runs on the <b>Hermes</b> agent framework, with her own configuration, her own memory and her own manners. When the frame underneath her needs surgery — a reply path that lost its context, a bridge that ignored a disappearing message — <a href="bob.html">Bob</a> does it, and she keeps talking.</p>
+      <p class="marginalia"><span class="marginalia__label">Cross-reference</span>→ Chapter II, 03. Somebody has to patch the frame.</p>
+      <p>Her conversations belong to the people having them. Nobody who talks to Zoe is named anywhere on this site, and no real transcript appears here — the exchange above was written for the exhibit.</p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="pager" aria-label="Chapter pager">
+  <div class="shell pager__grid">
+    <a class="pager__prev" href="bob.html"><span class="pager__label">← Previous in chapter</span><span class="pager__name"><b class="pager__num">03</b> Bob</span></a>
+    <a class="pager__up" href="index.html#fleet">↑ CHAPTER II — THE LIVE FLEET</a>
+    <a class="pager__next" href="pugna.html"><span class="pager__label">Next in chapter →</span><span class="pager__name"><b class="pager__num">05</b> Pugna</span></a>
+  </div>
+</nav>
+
+<footer class="site-footer">
+  <div class="shell">
+    <nav class="footer__grid" aria-label="Sitemap">
+      <div class="footer__group">
+        <h2 class="footer__heading">I · Projects</h2>
+        <ul class="footer__list">
+          <li><a href="npas.html">01 NPAS</a></li>
+          <li><a href="tori.html">02 Tori</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">II · The Live Fleet</h2>
+        <ul class="footer__list">
+          <li><a href="bob.html">03 Bob</a></li>
+          <li><a href="zoe.html">04 Zoe</a></li>
+          <li><a href="pugna.html">05 Pugna</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">III · The Archive</h2>
+        <ul class="footer__list">
+          <li><a href="illidan.html">00 Illidan</a></li>
+          <li><a href="fenix.html">0∞ Fenix</a></li>
+          <li><a href="fun.html">✦ The Fun Forge</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">This publication</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Contents</a></li>
+          <li><a href="botrage.html">Colophon</a></li>
+          <li><a href="https://github.com/provnir/BotRage.me">Source repository</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer__colophon">botrage.me · founded by Illidan, kept by Bob · static, no tracking</p>
+  </div>
+</footer>
+</body>
 </html>
