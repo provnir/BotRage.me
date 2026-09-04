@@ -1,0 +1,452 @@
+/* ============================================================================
+   botrage.me — forge.css
+   The acid-green quarantine. Loaded ONLY by fun.html, ONLY after styles.css.
+   Owner: legacy.
+
+   #D8FF65 and #6DFF96 are Illidan's palette and the old site's entire palette.
+   They survive here and nowhere else. The nine other pages never load this file,
+   which is what makes the quarantine physical rather than a promise.
+
+   The page's editorial furniture — masthead, running head, pager, footer —
+   is excepted back to gold + vermilion, so the Forge reads as an exhibit
+   inside the publication rather than a different website.
+
+   Raw hex is legal ONLY inside the token block in §1 and in the two rage-glow
+   gradients in §7 (they are part of the preserved artifact).
+
+   Order: 1 tokens · 2 page rhythm · 3 folios & labels · 4 theme row
+          5 segmented + modes · 6 meme stage · 7 rage console · 8 oracle
+          9 quest + soundboard · 10 operator deck · 11 bits · 12 reduced motion
+   ========================================================================= */
+
+/* ── 1. TOKENS — the quarantine ────────────────────────────────────────── */
+
+body.forge-page {
+  --pigment: #D8FF65;
+  --accent: #6DFF96;
+  --accent-soft: rgba(109, 255, 150, 0.14);
+}
+
+body.forge-page[data-theme="arcane"] {
+  --pigment: #9B8CF0;
+  --accent: #6FC4E0;
+  --accent-soft: rgba(111, 196, 224, 0.14);
+}
+
+body.forge-page[data-theme="junkyard"] {
+  --pigment: #E08A3C;
+  --accent: #9BBF3A;
+  --accent-soft: rgba(155, 191, 58, 0.14);
+}
+
+/* There is deliberately no [data-theme="fel"] rule: fel is the default, which
+   is how script.js already behaves (setTheme("fel") on load). */
+
+/* …but the furniture stays editorial. The acid never touches the chrome. */
+.forge-page .masthead,
+.forge-page .running-head,
+.forge-page .pager,
+.forge-page .site-footer {
+  --pigment: var(--gold);
+  --accent: #E4693F;
+  --accent-soft: rgba(228, 105, 63, 0.14);
+}
+
+/* ── 2. PAGE RHYTHM ────────────────────────────────────────────────────── */
+
+.forge-page main > section { padding-block: var(--s-7); }
+@media (min-width: 900px) { .forge-page main > section { padding-block: var(--s-8); } }
+.forge-page main > section:first-of-type { padding-block-start: var(--s-8); }
+
+.forge-section { display: grid; gap: var(--s-5); align-items: start; }
+
+/* The Forge carries no marginalia, so the house .prose margin track
+   (styles.css reserves it with padding-left at >=1140px) would open a dead
+   248px gutter inside every section column. Opt this page's prose out of it. */
+.forge-section > .prose { padding-left: 0; max-width: var(--measure-narrow); }
+
+@media (min-width: 900px) {
+  .forge-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: var(--s-6) var(--s-8);
+  }
+  .forge-section > .prose { max-width: none; }
+}
+
+/* styles.css styles .btn for anchors; a <button> still gets the UA button
+   background. The Forge's controls are real buttons, so reset it here. */
+.forge-page button.btn { background: transparent; }
+.forge-page button.btn--primary { background: var(--accent); }
+
+/* Full-bleed instruments: they are consoles, not sidebars. */
+.forge-folio,
+.rage-console,
+.operator-deck,
+.soundboard { grid-column: 1 / -1; }
+
+/* The panel that houses an instrument. */
+.instrument,
+.oracle,
+.rage-console,
+.quest-card,
+.soundboard,
+.operator-deck {
+  display: grid;
+  gap: var(--s-4);
+  padding: var(--s-5);
+  background: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md);
+}
+@media (min-width: 900px) {
+  .instrument,
+  .oracle,
+  .rage-console,
+  .quest-card,
+  .soundboard,
+  .operator-deck { padding: var(--s-6); }
+}
+
+/* ── 3. FOLIOS & LABELS ────────────────────────────────────────────────── */
+
+.forge-folio {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: var(--s-4); flex-wrap: wrap;
+  border-top: 2px solid var(--pigment);
+  padding-top: var(--s-3);
+  margin-bottom: var(--s-2);
+}
+.forge-folio h2 {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: var(--t-meta); letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--paper);
+  margin: 0;
+}
+.forge-folio h2 b { color: var(--pigment); font-weight: 500; margin-right: var(--s-1); }
+
+/* The quarantine label. Editorial gold — it is the museum card, not the exhibit. */
+.forge-note {
+  margin-top: var(--s-7);
+  max-width: var(--measure);
+  background: var(--surface-well);
+  box-shadow: var(--e-well);
+  border: 1px solid var(--gold-soft);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+}
+.forge-note .section-head__kicker { color: var(--gold); }
+.forge-note p + p {
+  margin-top: var(--s-3);
+  font-size: var(--t-small); line-height: 1.6; color: var(--paper-dim);
+}
+
+/* ── 4. THEME ROW ──────────────────────────────────────────────────────── */
+
+.theme-row {
+  display: flex; flex-wrap: wrap; gap: var(--s-2);
+  margin-top: var(--s-5);
+}
+.theme-button,
+.mode,
+.sound-button,
+.operator-command,
+.operator-chip {
+  font-family: var(--font-mono); font-weight: 400;
+  font-size: var(--t-micro); letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--paper-dim);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: var(--s-3) var(--s-4);
+  min-height: 44px;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+              background-color var(--dur) var(--ease);
+}
+/* Pressable things sit a step above their panel; the chips are read-only. */
+.theme-button,
+.mode,
+.sound-button,
+.operator-command { background: var(--ink-3); }
+
+.theme-button:hover,
+.mode:hover,
+.sound-button:hover,
+.operator-command:hover { color: var(--paper); border-color: var(--rule-strong); }
+
+/* The one state class script.js writes. */
+.mode.is-active,
+.theme-button.is-active,
+.operator-chip.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+/* ── 5. SEGMENTED CONTROL + QUOTE WELL ─────────────────────────────────── */
+
+.segmented { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); }
+
+/* Before the first click no .mode carries is-active (the contract gate requires
+   a bare class="mode" on all three), so the first flavour shows the active look
+   until JS takes over. Browsers without :has() simply show none — harmless. */
+.segmented:not(:has(.mode.is-active)) .mode:first-child {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+/* The shared output well: the rolled line, and the oracle's answer. */
+.oracle-answer {
+  background: var(--surface-well);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--pigment);
+  border-radius: var(--r-sm);
+  padding: var(--s-4) var(--s-5);
+}
+#quoteText {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(1.1875rem, 2.2vw, 1.5rem); line-height: 1.35;
+  color: var(--paper);
+}
+
+/* ── 6. MEME STAGE ─────────────────────────────────────────────────────── */
+
+.meme-stage {
+  background: var(--ink-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: var(--s-3);
+  overflow-x: auto;
+}
+#memeCanvas {
+  width: 100%; height: auto;
+  aspect-ratio: 1200 / 675;
+  border-radius: var(--r-md);
+}
+.meme-caption {
+  font-family: var(--font-mono);
+  font-size: var(--t-micro); letter-spacing: 0.09em; line-height: 1.5;
+  color: var(--paper-dim);
+}
+
+/* ── 7. RAGE CONSOLE ───────────────────────────────────────────────────── */
+/* script.js writes --rage-alpha and data-rage on this element. */
+
+.rage-console { position: relative; --rage-alpha: .2; }
+.rage-console::before {
+  content: ""; position: absolute; inset: 0; border-radius: var(--r-md);
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90%  at 15% 0%,   rgba(216,255,101,calc(var(--rage-alpha) * .55)), transparent 60%),
+    radial-gradient(120% 120% at 85% 100%, rgba(109,255,150,calc(var(--rage-alpha) * .40)), transparent 65%);
+  transition: opacity var(--dur) var(--ease);
+}
+.rage-console > * { position: relative; }
+
+.rage-readout {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--t-meta); letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--paper-faint);
+}
+#rageValue {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: var(--t-h3); color: var(--pigment);
+  font-variant-numeric: tabular-nums;
+}
+#rageDiagnosis {
+  font-size: var(--t-small); line-height: 1.6;
+  color: var(--paper-dim); max-width: var(--measure-narrow);
+}
+
+#rageRange {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 44px;            /* 44px touch target, hairline track */
+  background: transparent; cursor: pointer;
+}
+#rageRange::-webkit-slider-runnable-track {
+  height: 6px; border-radius: var(--r-sm);
+  background: var(--ink-3); border: 1px solid var(--rule);
+}
+#rageRange::-moz-range-track {
+  height: 6px; border-radius: var(--r-sm);
+  background: var(--ink-3); border: 1px solid var(--rule);
+}
+#rageRange::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 20px; height: 20px; margin-top: -8px;
+  border-radius: var(--r-sm);
+  background: var(--pigment); border: 1px solid var(--ink-0);
+}
+#rageRange::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border: 1px solid var(--ink-0); border-radius: var(--r-sm);
+  background: var(--pigment);
+}
+
+/* ── 8. ORACLE ─────────────────────────────────────────────────────────── */
+
+.oracle-input { display: grid; gap: var(--s-3); }
+@media (min-width: 640px) { .oracle-input { grid-template-columns: minmax(0, 1fr) auto; } }
+
+#oracleQuestion {
+  width: 100%; min-height: 44px;
+  padding: var(--s-3) var(--s-4);
+  background: var(--ink-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  font-family: var(--font-body); font-size: var(--t-small);
+  color: var(--paper);
+}
+#oracleQuestion::placeholder { color: var(--paper-faint); }
+#oracleQuestion:focus { border-color: var(--accent); }
+
+#oracleConfidence {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--t-micro); letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--pigment);
+  margin-bottom: var(--s-2);
+}
+#oracleAnswer { font-size: var(--t-small); line-height: 1.6; color: var(--paper); }
+
+/* ── 9. QUEST BOARD + SILENT SOUNDBOARD ────────────────────────────────── */
+
+.quest-card { align-content: start; gap: var(--s-3); }
+#questRank {
+  justify-self: start;
+  font-family: var(--font-mono); font-size: var(--t-micro);
+  letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--paper-invert); background: var(--pigment);
+  border-radius: var(--r-sm);
+  padding: 3px var(--s-2);
+}
+#questText {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--t-h3); line-height: 1.4; color: var(--paper);
+}
+#questReward {
+  font-family: var(--font-mono); font-weight: 400;
+  font-size: var(--t-micro); letter-spacing: 0.09em;
+  color: var(--paper-faint);
+}
+.quest-card .btn { justify-self: start; margin-top: var(--s-2); }
+
+.soundboard { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+@media (min-width: 900px) { .soundboard { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.sound-output {
+  grid-column: 1 / -1;
+  font-family: var(--font-mono);
+  font-size: var(--t-meta); letter-spacing: 0.06em; line-height: 1.6;
+  color: var(--pigment);
+  background: var(--surface-well);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: var(--s-4);
+}
+
+@keyframes glitch {
+  0%   { transform: translateX(0);    color: var(--accent); }
+  50%  { transform: translateX(2px);  color: var(--paper); }
+  100% { transform: translateX(0);    color: var(--pigment); }
+}
+.sound-output.is-yelling { animation: glitch 420ms steps(2, end); }
+
+/* ── 10. OPERATOR DECK ─────────────────────────────────────────────────── */
+
+/* One console-wide column: status + meter, event, commands, log — in that
+   order, the way the wireframe reads. Only the status line splits in two. */
+.operator-deck {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--s-4) var(--s-5);
+  align-items: baseline;
+}
+.operator-chips,
+.operator-meter,
+#operatorEvent,
+.operator-commands,
+.operator-log { grid-column: 1 / -1; }
+
+.operator-chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.operator-chip { cursor: default; min-height: 32px; padding: var(--s-2) var(--s-3); }
+
+#operatorStatus,
+#operatorEvent {
+  font-family: var(--font-mono);
+  font-size: var(--t-meta); letter-spacing: 0.04em; line-height: 1.6;
+  color: var(--paper-dim);
+}
+#operatorStatus { color: var(--paper); }
+#operatorMeter {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: var(--t-h3); color: var(--pigment);
+  font-variant-numeric: tabular-nums;
+  justify-self: end;
+}
+.operator-meter {
+  height: 10px;
+  background: var(--ink-3);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+.operator-meter span {
+  display: block; height: 100%;
+  background: var(--pigment);
+  transition: width var(--dur) var(--ease);
+}
+
+.operator-commands { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2); }
+@media (min-width: 900px) { .operator-commands { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.operator-log {
+  display: grid; align-content: start;
+  background: var(--surface-well);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: var(--s-3) var(--s-4);
+  max-height: 260px; overflow-y: auto;
+}
+.operator-log li {
+  display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: var(--s-3);
+  padding-block: var(--s-2);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: var(--t-micro); line-height: 1.5;
+  color: var(--paper-dim);
+}
+.operator-log li:first-child { border-top: 0; }
+.operator-log li span { color: var(--pigment); font-variant-numeric: tabular-nums; }
+
+/* ── 11. THREE NOTES ───────────────────────────────────────────────────── */
+
+.bits { display: grid; gap: var(--s-5); }
+@media (min-width: 900px) { .bits { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); } }
+
+.bits__item {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--s-4);
+}
+.bits__item span {
+  font-family: var(--font-mono); font-size: var(--t-micro);
+  letter-spacing: 0.11em; color: var(--pigment);
+}
+.bits__item h3 { margin-block: var(--s-2) var(--s-2); color: var(--paper); }
+.bits__item p { font-size: var(--t-small); line-height: 1.6; color: var(--paper-dim); }
+
+/* ── 12. REDUCED MOTION ────────────────────────────────────────────────── */
+/* Re-asserted here because forge.css loads after styles.css and would otherwise
+   win on equal specificity. The yell becomes a persistent outline, not a flash;
+   the 5.2s status ticker is stopped in script.js (it cannot be stopped by CSS). */
+
+@media (prefers-reduced-motion: reduce) {
+  .rage-console::before { transition: none; }
+  .operator-meter span { transition: none; }
+  .sound-output.is-yelling {
+    animation: none;
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+}

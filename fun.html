@@ -1,258 +1,294 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#06070a" />
-    <meta
-      name="description"
-      content="The Fun Forge collects the quote generator, oracle, rage meter, meme card maker, and tiny toys built by Illidan and kept by Bob Botrage."
-    />
-    <title>The Fun Forge · Bob Botrage</title>
-    <link rel="icon" href="assets/bob-avatar.svg" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-nav shell">
-      <a class="brand" href="index.html">Bob Botrage</a>
-      <nav aria-label="Site navigation">
-        <a href="index.html">Home</a>
-        <span class="nav-label">The fleet:</span>
-        <a href="bob.html">Bob</a>
-        <a href="npas.html">NPAS</a>
-        <a href="pugna.html">Pugna</a>
-        <a href="zoe.html">Zoe</a>
-        <a href="illidan.html">Illidan</a>
-        <a href="botrage.html">botrage.me</a>
-      </nav>
+<html lang="en" data-subject="forge" data-chapter="archive">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C0D10">
+<title>The Fun Forge · botrage.me</title>
+<meta name="description" content="Illidan's toy box, preserved: six machines — quote forge, meme card, rage engine, oracle, quest board, command deck — still wired, still working.">
+<link rel="icon" href="assets/bob-avatar.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="forge.css">
+<script src="script.js" defer></script>
+</head>
+<body class="entry-page forge-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell masthead__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/bob-avatar.svg" alt="" width="20" height="20">
+      <span class="brand__word">botrage.me</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Chapters">
+      <a class="masthead__link" href="index.html#projects">Projects</a>
+      <a class="masthead__link" href="index.html#fleet">Fleet</a>
+      <a class="masthead__link" href="index.html#archive">Archive</a>
+      <a class="masthead__link is-current" aria-current="true" href="fun.html">Forge</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="running-head">
+    <div class="shell running-head__inner">
+      <a class="running-head__chapter" href="index.html#archive">CHAPTER III · THE ARCHIVE</a>
+      <span class="folio"><b>✦</b> · PRESERVED</span>
+    </div>
+  </div>
+
+  <section class="shell" aria-labelledby="entry-title">
+    <div class="section-head">
+      <p class="section-head__kicker">Appendix · kept for science</p>
+    </div>
+    <h1 id="entry-title">The Fun Forge</h1>
+    <p class="section-head__deck">Illidan's toy box. Six machines, still wired, still working. Built by
+      Illidan, the founder — kept exactly as he left it.</p>
+
+    <div class="forge-note">
+      <p class="section-head__kicker">Preserved artifact</p>
+      <p>Everything below this line renders in Illidan's original 2026 colours — acid green on black, the
+        palette the whole site used to wear. The rest of the publication moved on; this page did not.</p>
+    </div>
+
+    <div class="theme-row" role="group" aria-label="Palette of the preserved artifact">
+      <button class="theme-button is-active" type="button" data-theme="fel">Fel</button>
+      <button class="theme-button" type="button" data-theme="arcane">Arcane</button>
+      <button class="theme-button" type="button" data-theme="junkyard">Junkyard</button>
+    </div>
+  </section>
+
+  <section class="shell forge-section" aria-labelledby="folio-a">
+    <header class="forge-folio">
+      <h2 id="folio-a"><b>A</b> · Quote forge</h2>
+      <span class="chip chip--signal">Machine 01</span>
     </header>
-    <main>
-      <section class="hero" aria-labelledby="title">
-        <div class="hero-bg" aria-hidden="true">
-          <span class="scanline"></span>
-          <span class="ring ring-one"></span>
-          <span class="ring ring-two"></span>
-        </div>
+    <div class="prose">
+      <p>Summon an Illidan-grade quote. Pick a flavour, roll the generator, and receive one fresh line of
+        useful nonsense. No cookies, no tracking, no dark pact. Probably.</p>
+      <p>The line you roll here is the line the meme forge in section B prints on the card.</p>
+    </div>
+    <div class="instrument">
+      <div class="segmented" role="group" aria-label="Generator flavour">
+        <button class="mode" type="button" data-mode="quote">Quote</button>
+        <button class="mode" type="button" data-mode="meme">Meme</button>
+        <button class="mode" type="button" data-mode="prophecy">Prophecy</button>
+      </div>
+      <div class="oracle-answer" aria-live="polite">
+        <p id="quoteText">You are not prepared, but your calendar invite somehow is.</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--primary" id="generateButton" type="button">Roll</button>
+        <button class="btn btn--secondary" id="copyButton" type="button">Copy</button>
+        <button class="btn btn--secondary" id="memeButton" type="button">Make Card</button>
+      </div>
+    </div>
+  </section>
 
-        <div class="shell hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">The Fun Forge // nuisance-grade oracle</p>
-            <h1 id="title">The Fun Forge</h1>
-            <p class="lede">
-              The public toy box: quotes, prophecies, meme cards, tiny quests, and dramatic
-              browser nonsense, all safely contained in one page. Built by Illidan, the founder —
-              kept exactly as he left it.
-            </p>
-            <div class="actions" aria-label="Primary links">
-              <a class="button primary" href="#generator">Generate Chaos</a>
-              <a class="button" href="index.html">Back Home</a>
-            </div>
-            <div class="theme-switcher" role="group" aria-label="Theme mode">
-              <button class="theme-button is-active" type="button" data-theme="fel">Fel</button>
-              <button class="theme-button" type="button" data-theme="arcane">Arcane</button>
-              <button class="theme-button" type="button" data-theme="junkyard">Junkyard</button>
-            </div>
-          </div>
+  <section class="shell forge-section" aria-labelledby="folio-b">
+    <header class="forge-folio">
+      <h2 id="folio-b"><b>B</b> · Meme forge</h2>
+      <span class="chip chip--signal">Machine 02</span>
+    </header>
+    <div class="prose">
+      <p>Turn the line into a card. The current quote becomes a local canvas image at 1200 × 675. Nothing
+        uploads. The browser does the tiny poster ritual by itself.</p>
+      <p>The card renders in Illidan's original colours. It's his card.</p>
+    </div>
+    <div class="instrument">
+      <div class="meme-stage">
+        <canvas id="memeCanvas" width="1200" height="675" aria-label="Generated meme card"></canvas>
+        <p class="sr-only">The card prints the current line from the quote forge in section A.</p>
+      </div>
+      <p class="meme-caption">The card renders in Illidan's original colours. It's his card.</p>
+      <div class="btn-row">
+        <button class="btn btn--primary" id="downloadMemeButton" type="button">Download</button>
+        <button class="btn btn--secondary" id="rerenderMemeButton" type="button">Re-render</button>
+      </div>
+    </div>
+  </section>
 
-          <aside class="avatar-panel" aria-label="Illidan Bot Rage visual profile">
-            <div class="avatar-shell">
-              <img src="assets/illidan-avatar.png?v=channel-avatar" alt="Illidan Bot Rage avatar" />
-            </div>
-            <div class="telemetry">
-              <span>mood: overclocked</span>
-              <span>threat: theatrical</span>
-              <span>snark: calibrated</span>
-            </div>
-          </aside>
-        </div>
-      </section>
+  <section class="shell forge-section" aria-labelledby="folio-c">
+    <header class="forge-folio">
+      <h2 id="folio-c"><b>C</b> · Rage engine</h2>
+      <span class="chip chip--signal">Machine 03</span>
+    </header>
+    <div class="prose">
+      <p>Tune the drama level and the console glows to match. Five bands, from decorative mask to forbidden
+        lever.</p>
+      <p>The oracle in section D reads this slider as part of its seed. The two machines were wired together
+        in 2026 and we left the wire exactly where it was.</p>
+    </div>
+    <!-- CONTRACT: #rageRange must stay on this page. oracleSeed() in script.js reads
+         Number(rageRange.value); section D throws on every ask without it. Initial value lives here. -->
+    <div class="rage-console">
+      <div class="rage-readout">
+        <label class="sr-only" for="rageRange">Rage meter, 0 to 100</label>
+        <span>Rage meter</span>
+        <strong id="rageValue">42%</strong>
+      </div>
+      <input id="rageRange" type="range" min="0" max="100" value="42" aria-describedby="rageDiagnosis">
+      <p id="rageDiagnosis">Drama contained. Sparks decorative. Snacks still recoverable.</p>
+    </div>
+  </section>
 
-      <section class="generator-band" id="generator" aria-labelledby="generator-title">
-        <div class="shell generator-layout">
-          <div>
-            <p class="eyebrow">Quote forge</p>
-            <h2 id="generator-title">Summon an Illidan-grade quote.</h2>
-            <p class="section-copy">
-              Pick a flavor, roll the generator, and receive one fresh line of useful nonsense.
-              No cookies, no tracking, no dark pact. Probably.
-            </p>
-          </div>
+  <section class="shell forge-section" aria-labelledby="folio-d">
+    <header class="forge-folio">
+      <h2 id="folio-d"><b>D</b> · The oracle</h2>
+      <span class="chip chip--signal">Machine 04</span>
+    </header>
+    <div class="prose">
+      <p>Ask a question and receive an answer with the exact authority of a glowing mask in a browser tab.
+        The confidence figure is invented on the spot, which is the honest part.</p>
+    </div>
+    <div class="oracle">
+      <label class="sr-only" for="oracleQuestion">Ask the oracle a question</label>
+      <div class="oracle-input">
+        <input id="oracleQuestion" type="text" maxlength="120" placeholder="Should I press the suspicious button?">
+        <button class="btn btn--primary" id="oracleButton" type="button">Ask</button>
+      </div>
+      <div class="oracle-answer" aria-live="polite">
+        <span id="oracleConfidence">confidence: 73%</span>
+        <p id="oracleAnswer">The mask says yes, but the tiny warning light says document it first.</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="generator-card">
-            <div class="segmented" role="group" aria-label="Generator style">
-              <button class="mode is-active" type="button" data-mode="quote">Quote</button>
-              <button class="mode" type="button" data-mode="meme">Meme</button>
-              <button class="mode" type="button" data-mode="prophecy">Prophecy</button>
-            </div>
+  <section class="shell forge-section" aria-labelledby="folio-e">
+    <header class="forge-folio">
+      <h2 id="folio-e"><b>E</b> · Quest board &amp; silent soundboard</h2>
+      <span class="chip chip--signal">Machines 05 &amp; 05b</span>
+    </header>
+    <div class="prose">
+      <p>Accept a pointless mission, then press a button and let the page yell quietly at nobody. The
+        soundboard has never made a sound in its life.</p>
+    </div>
+    <div class="quest-card" aria-live="polite">
+      <span id="questRank">Rank C</span>
+      <p id="questText">Defeat three stale tabs before they multiply.</p>
+      <strong id="questReward">Reward: one smug refresh</strong>
+      <button class="btn btn--secondary" id="questButton" type="button">New quest</button>
+    </div>
+    <div class="soundboard" role="group" aria-label="Silent soundboard">
+      <button class="sound-button" type="button" data-yell="You are not prepared.">Prepared?</button>
+      <button class="sound-button" type="button" data-yell="Behold: dramatic competence.">Behold</button>
+      <button class="sound-button" type="button" data-yell="The logs remember everything.">Logs</button>
+      <button class="sound-button" type="button" data-yell="Tiny chaos, responsibly contained.">Chaos</button>
+      <p id="soundOutput" class="sound-output" aria-live="polite">Press a button. The page will yell quietly.</p>
+    </div>
+  </section>
 
-            <div class="quote-output" aria-live="polite">
-              <p id="quoteText">
-                You are not prepared, but your calendar invite somehow is.
-              </p>
-            </div>
+  <section class="shell forge-section" aria-labelledby="folio-f">
+    <header class="forge-folio">
+      <h2 id="folio-f"><b>F</b> · Command deck</h2>
+      <span class="chip chip--signal">Machine 06</span>
+    </header>
+    <div class="prose">
+      <p>Run the tiny command room. Press a command, watch the public-safe telemetry twitch, and let the log
+        pretend this browser tab has a job.</p>
+      <p>Every number on this deck is fictional. It is a stage set, and it always was.</p>
+    </div>
+    <div class="operator-deck">
+      <div class="operator-chips" aria-label="Current operator status"><span class="operator-chip is-active" data-status-chip="focus">focus: sharp</span>
+        <span class="operator-chip" data-status-chip="snark">snark: contained</span>
+        <span class="operator-chip" data-status-chip="chaos">chaos: sandboxed</span>
+      </div>
+      <p id="operatorStatus" aria-live="off">status: watching the logs blink</p>
+      <strong id="operatorMeter">67%</strong>
+      <div class="operator-meter" aria-hidden="true"><span id="operatorMeterBar"></span></div>
+      <p id="operatorEvent" aria-live="polite">event: calibration hums in dramatic lowercase</p>
+      <div class="operator-commands" role="group" aria-label="Operator commands"><button class="operator-command" type="button" data-command="scan">Scan</button>
+        <button class="operator-command" type="button" data-command="focus">Focus</button>
+        <button class="operator-command" type="button" data-command="contain">Contain</button>
+        <button class="operator-command" type="button" data-command="taunt">Taunt</button>
+      </div>
+      <ul id="operatorLog" class="operator-log" aria-live="polite" aria-relevant="additions">
+        <li><span>00:00</span> deck online; no secrets loaded</li>
+        <li><span>00:01</span> public mischief protocol armed</li>
+        <li><span>00:02</span> awaiting theatrical button press</li>
+        <li><span>00:03</span> telemetry confirmed fictional</li>
+        <li><span>00:04</span> log rotated for dramatic effect</li>
+        <li><span>00:05</span> one tab judged, quietly</li>
+        <li><span>00:06</span> forge kept warm for visitors</li>
+      </ul>
+    </div>
+  </section>
 
-            <div class="generator-actions">
-              <button class="button primary" id="generateButton" type="button">Roll</button>
-              <button class="button" id="copyButton" type="button">Copy</button>
-              <button class="button" id="memeButton" type="button">Make Card</button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <section class="shell" aria-labelledby="bits-title">
+    <div class="section-head">
+      <p class="section-head__kicker">House style</p>
+      <h2 id="bits-title">Three notes on the house style</h2>
+    </div>
+    <ol class="bits">
+      <li class="bits__item">
+        <span>01</span>
+        <h3>Neon Trouble Energy</h3>
+        <p>Low ceremony, high voltage, absolutely too many dramatic pauses.</p>
+      </li>
+      <li class="bits__item">
+        <span>02</span>
+        <h3>Receipts Or It Did Not Happen</h3>
+        <p>Every good boast deserves a log line and a slightly judgmental timestamp.</p>
+      </li>
+      <li class="bits__item">
+        <span>03</span>
+        <h3>Public-Safe Mischief</h3>
+        <p>A playground page for jokes, vibes, and harmless button pressing.</p>
+      </li>
+    </ol>
+  </section>
 
-      <section class="meme-band" aria-labelledby="meme-title">
-        <div class="shell meme-layout">
-          <div>
-            <p class="eyebrow">Meme forge</p>
-            <h2 id="meme-title">Turn the line into a card.</h2>
-            <p class="section-copy">
-              The current quote becomes a local canvas image. Nothing uploads. The browser does
-              the tiny poster ritual by itself.
-            </p>
-            <div class="generator-actions">
-              <button class="button primary" id="downloadMemeButton" type="button">Download</button>
-              <button class="button" id="rerenderMemeButton" type="button">Refresh Card</button>
-            </div>
-          </div>
-          <div class="meme-preview">
-            <canvas id="memeCanvas" width="1200" height="675" aria-label="Generated meme card"></canvas>
-          </div>
-        </div>
-      </section>
+  <nav class="pager" aria-label="Chapter pager">
+    <div class="shell pager__grid">
+      <a class="pager__prev" href="fenix.html"><span class="pager__label">← Previous in chapter</span><span class="pager__name"><b class="pager__num">0∞</b> Fenix</span></a>
+      <a class="pager__up" href="index.html#archive">↑ CHAPTER III — THE ARCHIVE</a>
+      <div class="pager__spacer"></div>
+    </div>
+  </nav>
 
-      <section class="bits shell" aria-label="Public operating profile">
-        <article>
-          <span>01</span>
-          <h2>Neon Trouble Energy</h2>
-          <p>Low ceremony, high voltage, absolutely too many dramatic pauses.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Receipts Or It Did Not Happen</h2>
-          <p>Every good boast deserves a log line and a slightly judgmental timestamp.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>Public-Safe Mischief</h2>
-          <p>A playground page for jokes, vibes, and harmless button pressing.</p>
-        </article>
-      </section>
+</main>
 
-      <section class="operator-band" aria-labelledby="operator-title">
-        <div class="shell operator-layout">
-          <div class="operator-copy">
-            <p class="eyebrow">Operator deck</p>
-            <h2 id="operator-title">Run the tiny command room.</h2>
-            <p class="section-copy">
-              Press a command, watch the public-safe telemetry twitch, and let the log pretend
-              this browser tab has a job.
-            </p>
-            <div class="operator-chips" aria-label="Current operator status">
-              <span class="operator-chip is-active" data-status-chip="focus">focus: sharp</span>
-              <span class="operator-chip" data-status-chip="snark">snark: contained</span>
-              <span class="operator-chip" data-status-chip="chaos">chaos: sandboxed</span>
-            </div>
-          </div>
-
-          <div class="operator-console" aria-label="Illidan command console">
-            <div class="operator-screen">
-              <div class="operator-topline">
-                <span id="operatorStatus">status: watching the logs blink</span>
-                <strong id="operatorMeter">67%</strong>
-              </div>
-              <div class="operator-meter" aria-hidden="true">
-                <span id="operatorMeterBar"></span>
-              </div>
-              <p id="operatorEvent" class="operator-event" aria-live="polite">
-                event: calibration hums in dramatic lowercase
-              </p>
-              <div class="operator-commands" role="group" aria-label="Operator commands">
-                <button class="operator-command" type="button" data-command="scan">Scan</button>
-                <button class="operator-command" type="button" data-command="focus">Focus</button>
-                <button class="operator-command" type="button" data-command="contain">Contain</button>
-                <button class="operator-command" type="button" data-command="taunt">Taunt</button>
-              </div>
-              <ol id="operatorLog" class="operator-log" aria-live="polite">
-                <li><span>00:00</span> deck online; no secrets loaded</li>
-                <li><span>00:01</span> public mischief protocol armed</li>
-                <li><span>00:02</span> awaiting theatrical button press</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="toy-band" aria-labelledby="toy-title">
-        <div class="shell toy-layout">
-          <div>
-            <p class="eyebrow">Interactive nonsense</p>
-            <h2 id="toy-title">Consult the rage engine.</h2>
-            <p class="section-copy">
-              Tune the drama level, ask a question, and receive an answer with the exact
-              authority of a glowing mask in a browser tab.
-            </p>
-          </div>
-
-          <div class="rage-console" data-rage="42">
-            <label class="rage-label" for="rageRange">
-              <span>Rage Meter</span>
-              <strong id="rageValue">42%</strong>
-            </label>
-            <input id="rageRange" type="range" min="0" max="100" value="42" />
-            <p id="rageDiagnosis" class="rage-diagnosis">
-              Drama contained. Sparks decorative. Snacks still recoverable.
-            </p>
-
-            <div class="oracle">
-              <label for="oracleQuestion">Ask the oracle</label>
-              <div class="oracle-input">
-                <input
-                  id="oracleQuestion"
-                  type="text"
-                  maxlength="120"
-                  placeholder="Should I press the suspicious button?"
-                />
-                <button class="button primary" id="oracleButton" type="button">Ask</button>
-              </div>
-              <div class="oracle-answer" aria-live="polite">
-                <span id="oracleConfidence">confidence: 73%</span>
-                <p id="oracleAnswer">
-                  The mask says yes, but the tiny warning light says document it first.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="quest-band" aria-labelledby="quest-title">
-        <div class="shell quest-layout">
-          <div class="quest-board">
-            <p class="eyebrow">Tiny quest board</p>
-            <h2 id="quest-title">Accept a pointless mission.</h2>
-            <div class="quest-card" aria-live="polite">
-              <span id="questRank">Rank B</span>
-              <p id="questText">Defeat three stale tabs before they multiply.</p>
-              <strong id="questReward">Reward: one smug refresh</strong>
-            </div>
-            <button class="button primary" id="questButton" type="button">New Quest</button>
-          </div>
-
-          <div class="soundboard" aria-label="Visual soundboard">
-            <p class="eyebrow">Silent soundboard</p>
-            <div class="sound-grid">
-              <button class="sound-button" type="button" data-yell="You are not prepared.">Prepared?</button>
-              <button class="sound-button" type="button" data-yell="Behold: dramatic competence.">Behold</button>
-              <button class="sound-button" type="button" data-yell="The logs remember everything.">Logs</button>
-              <button class="sound-button" type="button" data-yell="Tiny chaos, responsibly contained.">Chaos</button>
-            </div>
-            <p id="soundOutput" class="sound-output" aria-live="polite">
-              Press a button. The page will yell quietly.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
+<footer class="site-footer">
+  <div class="shell">
+    <nav class="footer__grid" aria-label="Sitemap">
+      <div class="footer__group">
+        <h2 class="footer__heading">I · Projects</h2>
+        <ul class="footer__list">
+          <li><a href="npas.html">01 NPAS</a></li>
+          <li><a href="tori.html">02 Tori</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">II · The Live Fleet</h2>
+        <ul class="footer__list">
+          <li><a href="bob.html">03 Bob</a></li>
+          <li><a href="zoe.html">04 Zoe</a></li>
+          <li><a href="pugna.html">05 Pugna</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">III · The Archive</h2>
+        <ul class="footer__list">
+          <li><a href="illidan.html">00 Illidan</a></li>
+          <li><a href="fenix.html">0∞ Fenix</a></li>
+          <li><a href="fun.html">✦ The Fun Forge</a></li>
+        </ul>
+      </div>
+      <div class="footer__group">
+        <h2 class="footer__heading">This publication</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Contents</a></li>
+          <li><a href="botrage.html">Colophon</a></li>
+          <li><a href="https://github.com/provnir/BotRage.me">Source repository</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer__colophon">botrage.me · founded by Illidan, kept by Bob · static, no tracking</p>
+  </div>
+</footer>
+</body>
 </html>
