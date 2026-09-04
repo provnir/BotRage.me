@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Fenix avatar">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#1c1330"/>
+      <stop offset="1" stop-color="#0b1020"/>
+    </radialGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ff5a1f"/>
+      <stop offset="0.55" stop-color="#ff9a2e"/>
+      <stop offset="1" stop-color="#ffe08a"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#fff7d6"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="url(#bg)" stroke="#ff8a3d" stroke-opacity="0.5" stroke-width="3"/>
+  <!-- wings -->
+  <path d="M128 186 C 92 170, 58 150, 40 104 C 62 122, 84 126, 100 118 C 84 100, 78 78, 86 54 C 98 80, 112 96, 128 104 Z" fill="url(#flame)" opacity="0.9"/>
+  <path d="M128 186 C 164 170, 198 150, 216 104 C 194 122, 172 126, 156 118 C 172 100, 178 78, 170 54 C 158 80, 144 96, 128 104 Z" fill="url(#flame)" opacity="0.9"/>
+  <!-- body / rising flame -->
+  <path d="M128 40 C 150 72, 168 96, 160 132 C 156 150, 144 162, 128 200 C 112 162, 100 150, 96 132 C 88 96, 106 72, 128 40 Z" fill="url(#flame)"/>
+  <path d="M128 86 C 140 104, 146 118, 142 134 C 140 146, 134 154, 128 174 C 122 154, 116 146, 114 134 C 110 118, 116 104, 128 86 Z" fill="url(#core)"/>
+  <!-- head + beak -->
+  <circle cx="128" cy="44" r="9" fill="#ffe08a"/>
+  <path d="M128 36 L 140 40 L 128 46 Z" fill="#ff5a1f"/>
+  <!-- ember ring -->
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#ffb347" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="4 10"/>
+</svg>
